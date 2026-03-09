@@ -194,13 +194,13 @@ body.adventure-mode .nav.scrolled {
 
 /* ---- Header / Hero ---- */
 .hero {
-  min-height: 100vh;
+  min-height: 82vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 8rem 2rem 5rem;
+  padding: 5.5rem 2rem 4rem;
   position: relative;
   overflow: hidden;
 }
@@ -290,6 +290,33 @@ body.adventure-mode .orb { opacity: 0.18; }
   margin: 0 auto 2.5rem;
   line-height: 1.7;
   font-style: normal;
+}
+
+.hero-highlights {
+  list-style: none;
+  margin: 0 auto 2rem;
+  max-width: 720px;
+  text-align: left;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.hero-highlights li {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 999px;
+  box-shadow: var(--shadow-sm);
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+  line-height: 1.4;
+  padding: 0.55rem 1rem;
+}
+
+.hero-highlights li::before {
+  content: "•";
+  color: var(--accent);
+  font-weight: 700;
+  margin-right: 0.55rem;
 }
 
 .hero-ctas {
@@ -1120,6 +1147,13 @@ body.adventure-mode .rune { display: inline; }
   .kpi-grid { grid-template-columns: 1fr; }
   .dash-grid { grid-template-columns: 1fr; }
   .hero-ctas { flex-direction: column; align-items: center; }
+  .hero-highlights {
+    max-width: 100%;
+    text-align: left;
+  }
+  .hero-highlights li {
+    border-radius: var(--radius-sm);
+  }
   .footer-ctas { flex-direction: column; align-items: center; }
   .project-header { padding: 1.2rem 1.25rem; }
   .project-body-inner { padding: 0 1.25rem 1.5rem; }
@@ -1178,6 +1212,11 @@ body.adventure-mode .rune { display: inline; }
     <h1 class="hero-name">Marcela Gleixner</h1>
     <p class="hero-title">AI Content Strategy &amp; Program Management</p>
     <p class="hero-tagline">"I transform knowledge chaos into AI-ready systems that serve millions."</p>
+    <ul class="hero-highlights" aria-label="Current focus highlights">
+      <li>Open to new leadership opportunities after redundancy at Microsoft.</li>
+      <li>Currently studying AI in Business to bridge strategy, operations, and innovation.</li>
+      <li>Building practical playbooks that help teams adopt AI with confidence and measurable impact.</li>
+    </ul>
     <div class="hero-ctas">
       <a href="#projects" class="btn btn-primary">Explore My Impact</a>
       <a
