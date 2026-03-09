@@ -510,6 +510,12 @@ section {
 
 .dash-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
 
+.dash-card.clickable { cursor: pointer; }
+.dash-card.clickable:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
 .dash-card-header {
   display: flex;
   align-items: center;
@@ -928,6 +934,54 @@ section {
   line-height: 1.7;
 }
 
+/* ---- Additional resume sections ---- */
+.simple-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+.simple-card {
+  background: var(--card-bg);
+  border: 1.5px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  box-shadow: var(--shadow-sm);
+}
+.simple-card h3 {
+  font-family: var(--font-head);
+  font-size: 1.05rem;
+  margin-bottom: 0.3rem;
+}
+.simple-meta {
+  font-size: 0.82rem;
+  color: var(--text-tertiary);
+  margin-bottom: 0.65rem;
+}
+.simple-card p,
+.simple-card li {
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+}
+.simple-card ul { margin-left: 1rem; }
+
+.quote-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+.quote-card {
+  background: var(--card-bg);
+  border: 1.5px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+}
+.quote-text {
+  color: var(--text-secondary);
+  font-style: italic;
+  margin-bottom: 0.75rem;
+}
+.quote-author { font-size: 0.84rem; color: var(--text-tertiary); }
+
 /* ---- FOOTER ---- */
 footer {
   background: var(--text-primary);
@@ -1020,6 +1074,8 @@ body.adventure-mode .rune { display: inline; }
   .nav-links { display: none; }
   .kpi-grid { grid-template-columns: repeat(2, 1fr); }
   .dash-grid { grid-template-columns: repeat(2, 1fr); }
+  .simple-grid { grid-template-columns: 1fr; }
+  .quote-grid { grid-template-columns: 1fr; }
   .project-role { white-space: normal; }
   .dil-detail-card { padding: 1.5rem; }
   section { padding: 3.5rem 1.25rem; }
@@ -1047,8 +1103,10 @@ body.adventure-mode .rune { display: inline; }
   <ul class="nav-links">
     <li><a href="#impact">Impact</a></li>
     <li><a href="#experience">Experience</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#dayinlife">Day in Life</a></li>
+    <li><a href="#employment-history">Employment</a></li>
+    <li><a href="#education-section">Education</a></li>
+    <li><a href="#testimonials-section">Testimonials</a></li>
+    <li><a href="#hobbies">Hobbies</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
   <div class="nav-right">
@@ -1191,7 +1249,7 @@ body.adventure-mode .rune { display: inline; }
   <div class="dash-grid">
 
     <!-- 1 Education -->
-    <div class="dash-card c-accent fade-in" aria-label="Education card">
+    <div class="dash-card c-accent fade-in clickable" aria-label="Education card" role="link" tabindex="0" onclick="scrollToSection('education-section')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();scrollToSection('education-section')}">
       <div class="dash-card-header">
         <span class="dash-card-icon" aria-hidden="true"><span class="icon"><svg viewBox="0 0 24 24"><path d="m2 8 10-5 10 5-10 5-10-5Z"/><path d="M6 10v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/></svg></span></span>
         <div>
@@ -1240,7 +1298,7 @@ body.adventure-mode .rune { display: inline; }
     </div>
 
     <!-- 3 Experience -->
-    <div class="dash-card c-purple fade-in" aria-label="Experience card">
+    <div class="dash-card c-purple fade-in clickable" aria-label="Experience card" role="link" tabindex="0" onclick="scrollToSection('employment-history')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();scrollToSection('employment-history')}">
       <div class="dash-card-header">
         <span class="dash-card-icon" aria-hidden="true"><span class="icon"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="12" rx="2"/><path d="M9 7V5a3 3 0 0 1 6 0v2"/></svg></span></span>
         <div>
@@ -1296,7 +1354,7 @@ body.adventure-mode .rune { display: inline; }
     </div>
 
     <!-- 6 DEI -->
-    <div class="dash-card c-pink fade-in" aria-label="DEI and Leadership card">
+    <div class="dash-card c-pink fade-in clickable" aria-label="DEI and Leadership card" role="link" tabindex="0" onclick="scrollToSection('hobbies')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();scrollToSection('hobbies')}">
       <div class="dash-card-header">
         <span class="dash-card-icon" aria-hidden="true"><span class="icon"><svg viewBox="0 0 24 24"><path d="M8 11 4 7l3-3 4 4"/><path d="m16 11 4-4-3-3-4 4"/><path d="m9 12 3 3 3-3"/><path d="M12 15v5"/></svg></span></span>
         <div>
@@ -1331,7 +1389,7 @@ body.adventure-mode .rune { display: inline; }
     </div>
 
     <!-- 8 Testimonials -->
-    <div class="dash-card c-teal fade-in" aria-label="Testimonials card">
+    <div class="dash-card c-teal fade-in clickable" aria-label="Testimonials card" role="link" tabindex="0" onclick="scrollToSection('testimonials-section')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();scrollToSection('testimonials-section')}">
       <div class="dash-card-header">
         <span class="dash-card-icon" aria-hidden="true"><span class="icon"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H8l-4 3V5Z"/></svg></span></span>
         <div>
@@ -1492,6 +1550,60 @@ body.adventure-mode .rune { display: inline; }
   </div>
 </section>
 
+<!-- ═══════════════════════════ EMPLOYMENT HISTORY ═══════════════════════════ -->
+<section id="employment-history" aria-labelledby="employment-heading">
+  <div class="section-header fade-in">
+    <p class="section-label">Work History</p>
+    <h2 class="section-title" id="employment-heading">My Employment History</h2>
+    <p class="section-sub">A timeline of roles across public sector and global technology organizations.</p>
+  </div>
+  <div class="simple-grid fade-in">
+    <article class="simple-card"><h3>Content Program Manager — Microsoft</h3><p class="simple-meta">Dec 2024 – Present</p><ul><li>Managed 3,000+ support articles across OneNote, Skype, and Lens.</li><li>Raised content freshness from 67% to 94% for AI discoverability.</li></ul></article>
+    <article class="simple-card"><h3>Content Strategist — Electronic Arts</h3><p class="simple-meta">May 2024 – Nov 2024</p><ul><li>Introduced automated analytics for content effectiveness.</li><li>Improved helpfulness score by 40% and reduced low-value content.</li></ul></article>
+    <article class="simple-card"><h3>Digital Support Coordinator — VMware</h3><p class="simple-meta">Jan 2022 – Apr 2024</p><ul><li>Scaled KBTV to 30K+ subscribers with multilingual AI voiceovers.</li><li>Implemented KCS practices increasing knowledge base usage by 35%.</li></ul></article>
+    <article class="simple-card"><h3>Customer Support & Knowledge Operations — Activision Blizzard</h3><p class="simple-meta">2011 – 2022</p><ul><li>Top 1% EMEA performer for 5+ consecutive years.</li><li>Created and championed KCS training across 15 support teams.</li></ul></article>
+  </div>
+</section>
+
+<section id="education-section" aria-labelledby="education-heading">
+  <div class="section-header fade-in">
+    <p class="section-label">Education</p>
+    <h2 class="section-title" id="education-heading">My Education</h2>
+    <p class="section-sub">Credentials and ongoing learning focused on strategy, analytics, and AI.</p>
+  </div>
+  <div class="simple-grid fade-in">
+    <article class="simple-card"><h3>AI for Business — Linköping University</h3><p class="simple-meta">2025 – Present</p><p>Master's module in AI and machine learning for business innovation and transformation.</p></article>
+    <article class="simple-card"><h3>Business Analytics — Harvard Business School Online</h3><p class="simple-meta">2023</p><p>Data interpretation, regression, hypothesis testing, and analytical decision-making.</p></article>
+    <article class="simple-card"><h3>Postgraduate Diploma in Digital Marketing</h3><p class="simple-meta">Digital Marketing Institute · 2020 – 2021</p><p>EQF Level 7 diploma with focus on strategy, customer experience, UX, and privacy.</p></article>
+    <article class="simple-card"><h3>Master's in Public Administration in the European Union</h3><p class="simple-meta">University of Opole · 2000 – 2005</p><p>Graduated with 5/5. Thesis focused on internet and IT use in public administration.</p></article>
+  </div>
+</section>
+
+<section id="testimonials-section" aria-labelledby="testimonials-heading">
+  <div class="section-header fade-in">
+    <p class="section-label">Testimonials</p>
+    <h2 class="section-title" id="testimonials-heading">What Leaders Say</h2>
+  </div>
+  <div class="quote-grid fade-in">
+    <article class="quote-card"><p class="quote-text">“Her portfolio recently achieved the highest content freshness score of all Office portfolios.”</p><p class="quote-author">Principal Content Publishing Manager · Microsoft</p></article>
+    <article class="quote-card"><p class="quote-text">“Extensive experience in community support, multimedia content, KCS and content management. Highly recommended.”</p><p class="quote-author">Senior Support Product Manager · VMware</p></article>
+    <article class="quote-card"><p class="quote-text">“An extremely hard worker, always going above and beyond. She inspires others to do better.”</p><p class="quote-author">People Manager, Sales & Service · Activision Blizzard</p></article>
+  </div>
+</section>
+
+<section id="hobbies" aria-labelledby="hobbies-heading">
+  <div class="section-header fade-in">
+    <p class="section-label">Beyond Work</p>
+    <h2 class="section-title" id="hobbies-heading">My Hobbies</h2>
+    <p class="section-sub">Creative and community activities that keep me inspired.</p>
+  </div>
+  <div class="simple-grid fade-in">
+    <article class="simple-card"><h3>Macro Photography</h3><p class="simple-meta">Award-winning personal project</p><p>Recognized in Love Your Coast 2021 and featured in Irish Examiner.</p></article>
+    <article class="simple-card"><h3>KnowledgeManagement.ie</h3><p class="simple-meta">Independent blog</p><p>I write about knowledge systems, AI adoption, and content strategy practices.</p></article>
+    <article class="simple-card"><h3>Carrigtwohill Gospel Choir</h3><p class="simple-meta">Community involvement</p><p>Active choir member; music and community support my creativity and energy.</p></article>
+  </div>
+</section>
+
 <!-- ═══════════════════════════ DAY IN LIFE ═══════════════════════════ -->
 <section id="dayinlife" class="dil-section" aria-labelledby="dil-heading">
   <div class="section-header fade-in">
@@ -1622,6 +1734,12 @@ function toggleTheme() {
     }
   }, { passive: true });
 })();
+
+// ---- Smooth scroll helper ----
+function scrollToSection(id) {
+  var el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+}
 
 // ---- Fade-in observer ----
 (function() {
