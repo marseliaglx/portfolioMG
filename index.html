@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Marcela Gleixner — Knowledge Operations & Customer Enablement specialist with 15+ years experience building self-service ecosystems.">
+<meta name="theme-color" content="#1B4DFF">
+<title>Marcela Gleixner — Knowledge Operations &amp; Customer Enablement</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400;1,9..40,500&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --cobalt:#1B4DFF;--cobalt-10:#EBF0FF;--cobalt-50:#3D6AFF;
+  --ink:#0f172a;--ink-80:#1e293b;--ink-60:#334155;--ink-40:#64748b;
+  --ink-30:#94a3b8;--ink-20:#cbd5e1;--ink-10:#e2e8f0;--ink-05:#f1f5f9;--ink-02:#f8fafc;
+  --white:#fff;--emerald:#059669;--emerald-bg:#ecfdf5;
+  --bg:#fafbfc;--card:#fff;--border:#eef0f4;
+  --r:20px;--r-sm:14px;--r-xs:8px;
+  --sh:0 1px 4px rgba(15,23,42,0.03),0 1px 2px rgba(15,23,42,0.02);
+  --sh-md:0 4px 24px rgba(15,23,42,0.06);
+  --sh-lg:0 12px 48px rgba(15,23,42,0.08);
+}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);font-family:'DM Sans',system-ui,sans-serif;color:var(--ink);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;}
+h1,h2,h3,h4{font-family:'DM Sans',system-ui,sans-serif;line-height:1.15;}
+a{color:var(--cobalt);text-decoration:none;}
+.site{max-width:1120px;margin:0 auto;padding:0 2rem 4rem;}
+.section{margin-bottom:4.5rem;}
+[id]{scroll-margin-top:5.5rem;}
+
+/* Scroll reveal */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.7s cubic-bezier(0.16,1,0.3,1),transform 0.7s cubic-bezier(0.16,1,0.3,1);}
+.reveal.visible{opacity:1;transform:translateY(0);}
+
+/* ═══════════════════════════════════════
+   HERO
+   ═══════════════════════════════════════ */
+.hero{padding:4rem 0 2.5rem;max-width:720px;}
+.hero-avail{
+  display:inline-flex;align-items:center;gap:0.5rem;
+  font-size:0.78rem;font-weight:600;letter-spacing:0.03em;
+  color:var(--emerald);background:var(--emerald-bg);
+  padding:0.4rem 0.95rem;border-radius:100px;margin-bottom:1.75rem;
+}
+.hero-avail::before{content:'';width:7px;height:7px;background:var(--emerald);border-radius:50%;animation:blink 2s ease-in-out infinite;}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.2}}
+.hero h1{
+  font-size:clamp(2.5rem,5.5vw,3.8rem);font-weight:800;
+  letter-spacing:-0.045em;line-height:1;margin-bottom:0.5rem;
+  color:var(--ink);
+}
+.hero-role{
+  font-family:'IBM Plex Mono',monospace;font-size:0.88rem;font-weight:500;
+  letter-spacing:0.06em;text-transform:uppercase;color:var(--cobalt);
+  margin-bottom:1.25rem;
+}
+.hero-vp{
+  font-size:1.15rem;color:var(--ink-40);max-width:620px;line-height:1.8;
+  margin-bottom:1.75rem;font-weight:400;
+}
+.hero-tags{display:flex;flex-wrap:wrap;gap:0.45rem;margin-bottom:1.75rem;}
+.hero-tag{
+  font-size:0.78rem;font-weight:600;padding:0.4rem 0.95rem;border-radius:100px;
+  background:var(--cobalt-10);color:var(--cobalt);
+}
+.hero-links{display:flex;gap:0.5rem;flex-wrap:wrap;}
+.hero-links a{
+  font-size:0.82rem;font-weight:600;padding:0.5rem 1.1rem;border-radius:100px;
+  border:1.5px solid var(--ink-10);color:var(--ink-40);transition:all 0.25s;
+}
+.hero-links a:hover{border-color:var(--cobalt);color:var(--cobalt);background:var(--cobalt-10);}
+
+/* ═══════════════════════════════════════
+   BENTO DASHBOARD — 8 TILES
+   ═══════════════════════════════════════ */
+.bento{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:0.85rem;
+  margin-bottom:1rem;
+}
+@media(max-width:900px){.bento{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:500px){.bento{grid-template-columns:1fr;}}
+.bt{
+  background:var(--card);border:1.5px solid var(--border);
+  border-radius:var(--r-sm);padding:1.35rem 1.4rem;
+  cursor:pointer;text-decoration:none;color:inherit;
+  transition:all 0.35s cubic-bezier(0.16,1,0.3,1);
+  display:flex;flex-direction:column;position:relative;overflow:hidden;
+}
+.bt:hover{box-shadow:var(--sh-md);transform:translateY(-5px);border-color:var(--cobalt);}
+.bt::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:var(--cobalt);opacity:0;transition:opacity 0.3s;
+}
+.bt:hover::before{opacity:1;}
+.bt-head{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:0.65rem;}
+.bt-num{
+  font-family:'IBM Plex Mono',monospace;font-size:1.65rem;font-weight:700;
+  color:var(--cobalt);line-height:1;
+}
+.bt-arrow{
+  font-size:0.85rem;color:var(--ink-20);transition:all 0.3s;
+}
+.bt:hover .bt-arrow{color:var(--cobalt);transform:translateY(2px);}
+.bt-label{font-size:0.92rem;font-weight:700;margin-bottom:0.35rem;line-height:1.3;}
+.bt-detail{font-size:0.8rem;color:var(--ink-40);line-height:1.55;}
+.bt-detail ul{list-style:none;margin-top:0.3rem;}
+.bt-detail li{padding:0.12rem 0;position:relative;padding-left:0.85rem;}
+.bt-detail li::before{content:'·';position:absolute;left:0;color:var(--cobalt);font-weight:700;}
+
+/* Language bars inside tile */
+.lang-bar{margin-top:0.45rem;}
+.lang-row{display:flex;align-items:center;gap:0.6rem;margin-bottom:0.4rem;}
+.lang-name{font-size:0.82rem;font-weight:600;min-width:55px;}
+.lang-track{flex:1;height:6px;background:var(--ink-05);border-radius:4px;overflow:hidden;}
+.lang-fill{height:100%;border-radius:4px;background:var(--cobalt);transition:width 1s cubic-bezier(0.16,1,0.3,1);}
+.lang-lbl{font-family:'IBM Plex Mono',monospace;font-size:0.65rem;font-weight:600;color:var(--ink-30);min-width:44px;text-align:right;}
+
+/* ═══════════════════════════════════════
+   STICKY NAV
+   ═══════════════════════════════════════ */
+.nav{
+  position:sticky;top:0;z-index:100;
+  background:rgba(250,251,252,0.92);
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--border);
+  margin:0 -2rem 3rem;padding:0 2rem;
+}
+.nav-inner{
+  max-width:1120px;margin:0 auto;
+  display:flex;gap:0.2rem;overflow-x:auto;scrollbar-width:none;padding:0.7rem 0;
+}
+.nav-inner::-webkit-scrollbar{display:none;}
+.nav-link{
+  font-size:0.78rem;font-weight:600;letter-spacing:0.02em;white-space:nowrap;
+  padding:0.45rem 1rem;border-radius:100px;
+  color:var(--ink-30);transition:all 0.25s;
+}
+.nav-link:hover{color:var(--cobalt);background:var(--cobalt-10);}
+
+/* ═══════════════════════════════════════
+   SECTION HEADERS
+   ═══════════════════════════════════════ */
+.s-head{margin-bottom:2rem;}
+.s-label{
+  font-family:'IBM Plex Mono',monospace;font-size:0.72rem;font-weight:600;
+  letter-spacing:0.08em;text-transform:uppercase;color:var(--cobalt);
+  margin-bottom:0.4rem;
+}
+.s-title{font-size:1.5rem;font-weight:800;letter-spacing:-0.03em;color:var(--ink);}
+
+/* ═══════════════════════════════════════
+   CARDS
+   ═══════════════════════════════════════ */
+.card{
+  background:var(--card);border:1.5px solid var(--border);
+  border-radius:var(--r);padding:1.65rem 1.75rem;
+  box-shadow:var(--sh);transition:box-shadow 0.35s,transform 0.35s;
+}
+.card:hover{box-shadow:var(--sh-md);transform:translateY(-2px);}
+
+/* ═══════════════════════════════════════
+   TIMELINE
+   ═══════════════════════════════════════ */
+.timeline{position:relative;padding-left:2.5rem;}
+.timeline::before{content:'';position:absolute;left:7px;top:0;bottom:0;width:2px;background:var(--ink-10);}
+.tl-entry{position:relative;margin-bottom:0.75rem;}
+.tl-dot{
+  position:absolute;left:-2.5rem;top:1.55rem;width:16px;height:16px;
+  border-radius:50%;background:var(--white);border:3px solid var(--cobalt);z-index:1;
+}
+.tl-entry.latest .tl-dot{background:var(--cobalt);box-shadow:0 0 0 6px var(--cobalt-10);}
+.tl-header{
+  background:var(--card);border:1.5px solid var(--border);
+  border-radius:var(--r-sm);padding:1.3rem 1.6rem;
+  cursor:pointer;display:flex;justify-content:space-between;align-items:center;
+  box-shadow:var(--sh);transition:all 0.3s;user-select:none;gap:1rem;
+}
+.tl-header:hover{box-shadow:var(--sh-md);border-color:var(--cobalt);}
+.tl-left{display:flex;flex-direction:column;gap:0.25rem;min-width:0;}
+.tl-co-row{display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap;}
+.tl-co{font-size:1.15rem;font-weight:700;}
+.tl-badge{
+  font-family:'IBM Plex Mono',monospace;font-size:0.6rem;font-weight:600;
+  letter-spacing:0.03em;padding:0.2rem 0.55rem;border-radius:100px;white-space:nowrap;
+}
+.tl-badge.remote{background:var(--cobalt-10);color:var(--cobalt);}
+.tl-badge.onsite{background:var(--ink-05);color:var(--ink-40);}
+.tl-badge.redundancy{background:#fef2f2;color:#dc2626;}
+.tl-badge.contract{background:var(--ink-05);color:var(--ink-40);}
+.tl-badge.acquisition{background:#fef2f2;color:#dc2626;}
+.tl-role{font-size:0.9rem;color:var(--ink-40);}
+.tl-right{display:flex;align-items:center;gap:0.75rem;flex-shrink:0;}
+.tl-yr{font-family:'IBM Plex Mono',monospace;font-size:0.78rem;font-weight:600;color:var(--cobalt);}
+.tl-chev{font-size:1rem;color:var(--ink-20);transition:transform 0.35s;}
+.tl-entry.open .tl-chev{transform:rotate(180deg);}
+.tl-body{max-height:0;overflow:hidden;transition:max-height 0.5s cubic-bezier(0.16,1,0.3,1);}
+.tl-entry.open .tl-body{max-height:1000px;}
+.tl-inner{
+  padding:1.5rem 1.6rem;border:1.5px solid var(--border);border-top:none;
+  border-radius:0 0 var(--r-sm) var(--r-sm);background:var(--ink-02);
+}
+.tl-sum{font-size:0.98rem;color:var(--ink-60);line-height:1.8;margin-bottom:1.25rem;}
+.tl-cl{
+  font-family:'IBM Plex Mono',monospace;font-size:0.68rem;font-weight:600;
+  text-transform:uppercase;letter-spacing:0.08em;color:var(--cobalt);margin-bottom:0.5rem;
+}
+.tl-ct{font-size:1.1rem;font-weight:700;margin-bottom:0.45rem;}
+.tl-cd{font-size:0.95rem;color:var(--ink-40);line-height:1.8;margin-bottom:1.15rem;}
+.tl-ms{display:flex;gap:1.75rem;flex-wrap:wrap;}
+.tl-m{display:flex;flex-direction:column;}
+.tl-m .v{font-family:'IBM Plex Mono',monospace;font-size:1.25rem;font-weight:700;color:var(--cobalt);}
+.tl-m .l{font-size:0.7rem;color:var(--ink-40);text-transform:uppercase;letter-spacing:0.04em;margin-top:0.15rem;}
+
+/* ═══════════════════════════════════════
+   AI JOURNEY
+   ═══════════════════════════════════════ */
+.ai-intro{font-size:1.05rem;color:var(--ink-40);margin-bottom:2rem;max-width:640px;line-height:1.8;}
+.ai-tl{position:relative;padding-left:3rem;}
+.ai-tl::before{content:'';position:absolute;left:11px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--ink-10),var(--cobalt),var(--cobalt-10));}
+.ai-item{position:relative;margin-bottom:1.75rem;}
+.ai-dot{position:absolute;left:-3rem;top:0.5rem;width:16px;height:16px;border-radius:50%;z-index:1;}
+.ai-dot.past{background:var(--ink-30);border:3px solid var(--ink-10);}
+.ai-dot.mid{background:var(--cobalt);border:3px solid var(--cobalt-10);}
+.ai-dot.now{background:var(--cobalt);border:3px solid var(--cobalt-10);box-shadow:0 0 0 6px var(--cobalt-10);}
+.ai-dot.future{background:var(--ink-30);border:3px solid var(--ink-10);border-style:dashed;}
+.ai-card{
+  background:var(--card);border:1.5px solid var(--border);
+  border-radius:var(--r-sm);padding:1.35rem 1.5rem;
+  box-shadow:var(--sh);transition:box-shadow 0.3s;
+}
+.ai-card:hover{box-shadow:var(--sh-md);}
+.ai-card.feat{border:2px solid var(--cobalt);box-shadow:0 0 0 4px var(--cobalt-10);}
+.ai-card.prog{border-left:4px solid var(--ink-30);background:var(--ink-02);}
+.ai-meta{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.4rem;margin-bottom:0.5rem;}
+.ai-yr{font-family:'IBM Plex Mono',monospace;font-size:0.82rem;font-weight:700;color:var(--cobalt);}
+.ai-org{font-family:'IBM Plex Mono',monospace;font-size:0.68rem;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;color:var(--ink-30);}
+.ai-title{font-size:1.05rem;font-weight:700;margin-bottom:0.35rem;}
+.ai-desc{font-size:0.92rem;color:var(--ink-40);line-height:1.75;}
+
+/* ═══════════════════════════════════════
+   TESTIMONIALS
+   ═══════════════════════════════════════ */
+.test-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;}
+@media(max-width:700px){.test-grid{grid-template-columns:1fr;}}
+.test-card{position:relative;padding-top:0.75rem;}
+.test-card::before{content:'"';font-size:4rem;font-weight:800;color:var(--cobalt-10);position:absolute;top:-0.2rem;left:1.35rem;line-height:1;pointer-events:none;}
+.test-text{font-size:1rem;color:var(--ink-60);line-height:1.8;font-style:italic;margin-bottom:1rem;position:relative;z-index:1;padding-top:0.6rem;}
+.test-attr{display:flex;flex-direction:column;gap:0.1rem;}
+.test-name{font-family:'IBM Plex Mono',monospace;font-size:0.78rem;font-weight:600;color:var(--cobalt);text-transform:uppercase;letter-spacing:0.04em;}
+.test-role{font-size:0.82rem;color:var(--ink-30);}
+.test-card.feat{grid-column:1/-1;background:var(--ink);border-color:var(--ink);}
+.test-card.feat::before{color:rgba(27,77,255,0.12);}
+.test-card.feat .test-text{color:rgba(255,255,255,0.85);}
+.test-card.feat .test-name{color:var(--cobalt-50);}
+.test-card.feat .test-role{color:rgba(255,255,255,0.35);}
+
+/* ═══════════════════════════════════════
+   EDUCATION
+   ═══════════════════════════════════════ */
+.edu-cat{
+  font-family:'IBM Plex Mono',monospace;font-size:0.72rem;font-weight:600;
+  text-transform:uppercase;letter-spacing:0.08em;color:var(--cobalt);
+  margin-bottom:1.25rem;padding-bottom:0.5rem;border-bottom:2px solid var(--cobalt);
+}
+.edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:2.5rem;}
+@media(max-width:640px){.edu-grid{grid-template-columns:1fr;}}
+.edu-card .badge{
+  display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:0.68rem;font-weight:600;
+  text-transform:uppercase;letter-spacing:0.04em;padding:0.25rem 0.7rem;border-radius:100px;margin-bottom:0.7rem;
+}
+.b-deg{background:var(--cobalt);color:#fff;}
+.b-cert{background:var(--cobalt-10);color:var(--cobalt);}
+.b-prog{background:var(--ink-60);color:#fff;}
+.edu-card .title{font-size:1.05rem;font-weight:700;line-height:1.3;margin-bottom:0.3rem;}
+.edu-card .inst{font-size:0.92rem;font-weight:600;color:var(--cobalt);margin-bottom:0.15rem;}
+.edu-card .yr{font-size:0.82rem;color:var(--ink-30);}
+.edu-card .desc{font-size:0.88rem;color:var(--ink-40);line-height:1.65;margin-top:0.4rem;}
+.edu-card .link{
+  display:inline-block;font-size:0.78rem;font-weight:700;color:var(--cobalt);
+  margin-top:0.6rem;padding:0.3rem 0.8rem;border:1.5px solid var(--cobalt);border-radius:100px;transition:all 0.25s;
+}
+.edu-card .link:hover{background:var(--cobalt);color:#fff;}
+.edu-card.dark{background:var(--ink);border:2px solid var(--cobalt);}
+.edu-card.dark .title{color:#fff;font-size:1.1rem;}
+.edu-card.dark .inst{color:var(--cobalt-50);}
+.edu-card.dark .yr,.edu-card.dark .desc{color:rgba(255,255,255,0.5);}
+.edu-card.dark .link{color:var(--cobalt-50);border-color:var(--cobalt-50);}
+.edu-card.dark .link:hover{background:var(--cobalt-50);color:#fff;}
+.edu-card.ip{border-left:4px solid var(--ink-30);background:var(--ink-02);}
+.cert-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+@media(max-width:640px){.cert-grid{grid-template-columns:1fr;}}
+.cert-card{padding:1.25rem 1.4rem;}
+.cert-card .ct{font-size:1rem;font-weight:700;margin-bottom:0.2rem;}
+.cert-card .ci{font-size:0.88rem;font-weight:600;color:var(--cobalt);margin-bottom:0.12rem;}
+.cert-card .cy{font-size:0.78rem;color:var(--ink-30);}
+.cert-card .cx{font-size:0.85rem;color:var(--ink-40);line-height:1.6;margin-top:0.35rem;}
+.cert-card .link{display:inline-block;font-size:0.75rem;font-weight:700;color:var(--cobalt);margin-top:0.5rem;transition:color 0.2s;}
+.cert-card .link:hover{text-decoration:underline;}
+
+/* ═══════════════════════════════════════
+   DEI
+   ═══════════════════════════════════════ */
+.dei-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem;}
+@media(max-width:700px){.dei-grid{grid-template-columns:1fr;}}
+.dei-card{border-top:3px solid var(--cobalt);}
+.dei-card h4{font-size:1.02rem;font-weight:700;margin-bottom:0.3rem;}
+.dei-orgs{font-family:'IBM Plex Mono',monospace;font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;color:var(--cobalt);margin-bottom:0.5rem;}
+.dei-card p{font-size:0.9rem;color:var(--ink-40);line-height:1.7;}
+.dei-stat{font-family:'IBM Plex Mono',monospace;font-size:0.88rem;font-weight:700;color:var(--cobalt);margin-top:0.55rem;}
+
+/* ═══════════════════════════════════════
+   PERSONAL
+   ═══════════════════════════════════════ */
+.pers-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;}
+@media(max-width:700px){.pers-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:420px){.pers-grid{grid-template-columns:1fr;}}
+.pers-tile{text-align:center;padding:2rem 1.15rem;}
+.pers-tile h4{font-size:0.98rem;font-weight:700;margin-bottom:0.3rem;}
+.pers-tile p{font-size:0.85rem;color:var(--ink-40);line-height:1.6;}
+.pers-tile a{display:inline-block;font-size:0.78rem;font-weight:700;color:var(--cobalt);margin-top:0.55rem;padding:0.3rem 0.7rem;border:1.5px solid var(--cobalt);border-radius:100px;transition:all 0.25s;}
+.pers-tile a:hover{background:var(--cobalt);color:#fff;}
+
+/* ═══════════════════════════════════════
+   CTA
+   ═══════════════════════════════════════ */
+.cta{background:var(--ink);border-radius:var(--r);padding:3.5rem;text-align:center;color:#fff;position:relative;overflow:hidden;}
+.cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(27,77,255,0.08),transparent 70%);pointer-events:none;}
+.cta h3{font-size:clamp(1.35rem,3vw,1.85rem);font-weight:700;margin-bottom:0.6rem;position:relative;letter-spacing:-0.02em;}
+.cta p{font-size:1rem;color:rgba(255,255,255,0.5);max-width:520px;margin:0 auto 1.75rem;position:relative;line-height:1.7;}
+.cta-links{display:flex;gap:0.6rem;justify-content:center;flex-wrap:wrap;position:relative;}
+.cta-links a{display:inline-block;padding:0.7rem 1.5rem;border-radius:100px;font-size:0.92rem;font-weight:600;transition:all 0.25s;}
+.btn-p{background:var(--cobalt);color:#fff;}
+.btn-p:hover{background:var(--cobalt-50);box-shadow:0 4px 20px rgba(27,77,255,0.3);}
+.btn-s{color:rgba(255,255,255,0.55);border:1.5px solid rgba(255,255,255,0.15);}
+.btn-s:hover{color:#fff;border-color:rgba(255,255,255,0.4);}
+
+/* ═══════════════════════════════════════
+   CHATBOT
+   ═══════════════════════════════════════ */
+.cb{position:fixed;bottom:28px;right:28px;background:var(--ink);color:#fff;width:56px;height:56px;border-radius:50%;border:none;cursor:pointer;box-shadow:var(--sh-lg);font-size:24px;display:flex;align-items:center;justify-content:center;transition:all 0.3s;z-index:1000;}
+.cb:hover{background:var(--cobalt);transform:scale(1.06);}
+.cw{position:fixed;bottom:100px;right:28px;width:390px;max-height:530px;background:var(--white);border-radius:var(--r);box-shadow:var(--sh-lg);display:none;flex-direction:column;z-index:1001;overflow:hidden;border:1.5px solid var(--border);}
+.cw.open{display:flex;animation:su .3s cubic-bezier(0.16,1,0.3,1);}
+@keyframes su{from{opacity:0;transform:translateY(16px) scale(0.97)}to{opacity:1;transform:translateY(0) scale(1)}}
+.cw-h{background:var(--ink);color:#fff;padding:1rem 1.3rem;display:flex;justify-content:space-between;align-items:center;}
+.cw-h h4{font-size:1rem;font-weight:600;}
+.cw-x{background:none;border:none;color:rgba(255,255,255,.4);font-size:1.2rem;cursor:pointer;transition:color .2s;}
+.cw-x:hover{color:#fff;}
+.cw-b{padding:1.2rem;overflow-y:auto;flex:1;max-height:430px;scroll-behavior:smooth;}
+.cw-i{font-size:0.92rem;color:var(--ink-40);line-height:1.7;margin-bottom:0.9rem;}
+.cw-qs{display:flex;flex-direction:column;gap:0.5rem;}
+.cw-q{background:var(--ink-02);padding:0.7rem 1rem;border-radius:var(--r-xs);border:1.5px solid var(--border);border-left:3px solid var(--cobalt);text-align:left;cursor:pointer;font-size:0.88rem;font-weight:600;color:var(--ink);font-family:'DM Sans',sans-serif;transition:all .25s;}
+.cw-q:hover{background:var(--cobalt);color:#fff;border-color:var(--cobalt);transform:translateX(4px);}
+.cw-a{display:none;background:var(--ink-02);padding:1.15rem;border-radius:var(--r-xs);border-left:3px solid var(--cobalt);margin-top:.7rem;}
+.cw-a.on{display:block;animation:fi .25s ease;}
+@keyframes fi{from{opacity:0}to{opacity:1}}
+.cw-a h5{font-size:0.95rem;color:var(--cobalt);font-weight:700;margin-bottom:.55rem;}
+.cw-a p{font-size:0.88rem;color:var(--ink-40);line-height:1.75;margin-bottom:.5rem;}
+.cw-a strong{color:var(--ink);}
+.cw-bk{background:var(--cobalt);color:#fff;padding:.5rem 1.05rem;border:none;border-radius:100px;cursor:pointer;margin-top:.7rem;font-weight:600;font-size:.82rem;font-family:'DM Sans',sans-serif;transition:background .2s;}
+.cw-bk:hover{background:var(--cobalt-50);}
+.btt{position:fixed;bottom:100px;right:28px;background:var(--white);color:var(--ink);width:44px;height:44px;border-radius:50%;border:1.5px solid var(--border);cursor:pointer;box-shadow:var(--sh);font-size:1.1rem;display:none;align-items:center;justify-content:center;transition:all .25s;z-index:999;}
+.btt.show{display:flex;}
+.btt:hover{border-color:var(--cobalt);color:var(--cobalt);}
+@media(max-width:600px){.cw{width:calc(100vw - 40px);right:20px;bottom:92px;}.cb{bottom:20px;right:20px;width:50px;height:50px;}.btt{bottom:86px;right:20px;}}
+</style>
+</head>
+<body>
+<div class="site">
+
+<!-- ════════ HERO ════════ -->
+<div class="hero">
+  <div class="hero-avail">Available for Opportunities</div>
+  <h1>Marcela Gleixner</h1>
+  <div class="hero-role">Knowledge Operations &amp; Customer Enablement</div>
+  <p class="hero-vp">I build self-service ecosystems that meet customers everywhere, before they ever need to contact support. 15+ years reducing cost-per-contact, improving NPS, and empowering agents through proactive content, KCS, and AI-ready infrastructure.</p>
+  <div class="hero-tags">
+    <span class="hero-tag">Knowledge-Centered Service</span>
+    <span class="hero-tag">AI-Ready Content</span>
+    <span class="hero-tag">Self-Service Design</span>
+    <span class="hero-tag">Programme Governance</span>
+    <span class="hero-tag">Contact Deflection</span>
+  </div>
+  <div class="hero-links">
+    <a href="https://www.linkedin.com/in/marcela-gleixner-programmanager/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    <a href="https://knowledgemanagement.ie/blog/" target="_blank" rel="noopener noreferrer">Blog</a>
+    <a href="mailto:marseliaglx@gmail.com" aria-label="Email Marcela">Email</a>
+  </div>
+</div>
+
+<!-- ════════ BENTO DASHBOARD (8 tiles) ════════ -->
+<div class="bento">
+  <a href="#timeline" class="bt reveal">
+    <div class="bt-head"><div class="bt-num">15+</div><div class="bt-arrow">↓</div></div>
+    <div class="bt-label">Years Experience</div>
+    <div class="bt-detail">
+      <ul><li>3 Private Sector (tech)</li><li>1 Public Administration</li><li>1 Intergovernmental</li></ul>
+    </div>
+  </a>
+  <a href="#education" class="bt reveal">
+    <div class="bt-head"><div class="bt-num">1+7</div><div class="bt-arrow">↓</div></div>
+    <div class="bt-label">Master's &amp; Certifications</div>
+    <div class="bt-detail">
+      <ul><li>MA Public Administration (EQF 7)</li><li>PGDip Digital Marketing</li><li>HBS Business Analytics</li><li>KCS v6 Practitioner</li></ul>
+    </div>
+  </a>
+  <a href="#ai-journey" class="bt reveal">
+    <div class="bt-head"><div class="bt-num">8 yrs</div><div class="bt-arrow">↓</div></div>
+    <div class="bt-label">AI &amp; ML Experience</div>
+    <div class="bt-detail">From ML training data annotation in 2017 to Microsoft Copilot content architecture in 2025</div>
+  </a>
+  <a href="#dei" class="bt reveal">
+    <div class="bt-head"><div class="bt-num">500+</div><div class="bt-arrow">↓</div></div>
+    <div class="bt-label">DEI &amp; Community Impact</div>
+    <div class="bt-detail">
+      <ul><li>I Am Remarkable Facilitator</li><li>Women's Network Lead</li><li>CarrigtwoHill Gospel Choir</li></ul>
+    </div>
+  </a>
+  <a href="#timeline" class="bt reveal">
+    <div class="bt-head"><div class="bt-num">3</div><div class="bt-arrow">↓</div></div>
+    <div class="bt-label">Remote &amp; Global Roles</div>
+    <div class="bt-detail">Microsoft (remote), EA (remote), VMware (remote). Teams across EU, US, APAC.</div>
+  </a>
+  <a href="#timeline" class="bt reveal">
+    <div class="bt-head"><div class="bt-num" style="font-size:1.2rem;">—</div><div class="bt-arrow">↓</div></div>
+    <div class="bt-label">Languages</div>
+    <div class="lang-bar">
+      <div class="lang-row"><span class="lang-name">Polish</span><div class="lang-track"><div class="lang-fill" style="width:100%"></div></div><span class="lang-lbl">Native</span></div>
+      <div class="lang-row"><span class="lang-name">English</span><div class="lang-track"><div class="lang-fill" style="width:100%"></div></div><span class="lang-lbl">Fluent</span></div>
+    </div>
+  </a>
+  <a href="#timeline" class="bt reveal">
+    <div class="bt-head"><div class="bt-num">5</div><div class="bt-arrow">↓</div></div>
+    <div class="bt-label">Self-Service Ecosystems</div>
+    <div class="bt-detail">
+      <ul><li>KCS global rollouts</li><li>Omnichannel content strategy</li><li>Chatbot + KB + video + community</li></ul>
+    </div>
+  </a>
+  <a href="#education" class="bt reveal">
+    <div class="bt-head"><div class="bt-num" style="font-size:1.2rem;">—</div><div class="bt-arrow">↓</div></div>
+    <div class="bt-label">Skills &amp; Tools</div>
+    <div class="bt-detail">
+      <ul><li>Power BI, Looker Studio</li><li>Python, SQL</li><li>SharePoint, Confluence</li><li>Salesforce, ServiceNow</li></ul>
+    </div>
+  </a>
+</div>
+
+<!-- ════════ STICKY NAV ════════ -->
+<div class="nav">
+  <div class="nav-inner">
+    <a href="#timeline" class="nav-link">Career</a>
+    <a href="#ai-journey" class="nav-link">AI Journey</a>
+    <a href="#testimonials" class="nav-link">Testimonials</a>
+    <a href="#education" class="nav-link">Education</a>
+    <a href="#dei" class="nav-link">DEI &amp; Leadership</a>
+    <a href="#personal" class="nav-link">Personal</a>
+    <a href="#contact" class="nav-link">Contact</a>
+  </div>
+</div>
+
+<!-- ════════ CAREER TIMELINE ════════ -->
+<div class="section" id="timeline">
+  <div class="s-head reveal"><div class="s-label">Career</div><div class="s-title">Employment Timeline</div></div>
+  <div class="timeline">
+
+    <div class="tl-entry latest reveal">
+      <div class="tl-dot"></div>
+      <div class="tl-header" onclick="tl(this)">
+        <div class="tl-left">
+          <div class="tl-co-row"><span class="tl-co">Microsoft</span><span class="tl-badge remote">Remote</span><span class="tl-badge redundancy">Redundancy</span></div>
+          <div class="tl-role">Content Programme Manager, M365 Knowledge Management</div>
+        </div>
+        <div class="tl-right"><div class="tl-yr">2024 – 2025</div><div class="tl-chev">▾</div></div>
+      </div>
+      <div class="tl-body"><div class="tl-inner">
+        <p class="tl-sum">Owned content strategy, lifecycle, and quality for three M365 help centres (OneNote, Skype, Lens): 3,000+ articles, 70+ knowledge owners, 25 outsourced writers. Built contributor workflows, governance frameworks, and AI-ready architecture from scratch. Role ended due to company-wide layoffs.</p>
+        <div class="tl-cl">Case Study</div>
+        <div class="tl-ct">AI Visibility &amp; Content Governance for M365 Customer Self-Service</div>
+        <p class="tl-cd">Structured content for Copilot/LLM discoverability so customers could self-solve in-product. Created a self-service onboarding hub with on-demand videos and an AI-powered assistant, reducing contributor onboarding from 1 day to 1 hour. Clustered OneNote content with Python, eliminating 20% duplicate articles. Managed the Skype sunset across 7 departments and multiple countries with zero missed deadlines.</p>
+        <div class="tl-ms">
+          <div class="tl-m"><span class="v">67→94%</span><span class="l">Content Freshness</span></div>
+          <div class="tl-m"><span class="v">+30%</span><span class="l">Helpfulness Score</span></div>
+          <div class="tl-m"><span class="v">1 day→1 hr</span><span class="l">Onboarding Time</span></div>
+          <div class="tl-m"><span class="v">70+</span><span class="l">Stakeholders</span></div>
+        </div>
+      </div></div>
+    </div>
+
+    <div class="tl-entry reveal">
+      <div class="tl-dot"></div>
+      <div class="tl-header" onclick="tl(this)">
+        <div class="tl-left">
+          <div class="tl-co-row"><span class="tl-co">EA Games</span><span class="tl-badge remote">Remote</span><span class="tl-badge contract">Contract</span></div>
+          <div class="tl-role">Content Strategist, Global Customer Support</div>
+        </div>
+        <div class="tl-right"><div class="tl-yr">2024</div><div class="tl-chev">▾</div></div>
+      </div>
+      <div class="tl-body"><div class="tl-inner">
+        <p class="tl-sum">Fixed-term contract. Owned content strategy, SEO, and helpfulness optimisation across 6 game titles during a platform migration. Introduced the team's first automated analytics and created a cross-functional Content Council.</p>
+        <div class="tl-cl">Case Study</div>
+        <div class="tl-ct">Customer Self-Service Optimisation During Platform Migration</div>
+        <p class="tl-cd">Introduced Looker Studio dashboards replacing manual Excel workflows. Cut 30% of content pre-migration based on data. Predicted contact drivers from historical data to proactively deflect contacts. Launched help content for 2 new game titles.</p>
+        <div class="tl-ms">
+          <div class="tl-m"><span class="v">+40%</span><span class="l">Helpfulness Score</span></div>
+          <div class="tl-m"><span class="v">10K+</span><span class="l">Articles Migrated</span></div>
+          <div class="tl-m"><span class="v">−30%</span><span class="l">Content Reduction</span></div>
+          <div class="tl-m"><span class="v">0</span><span class="l">Trust Incidents</span></div>
+        </div>
+      </div></div>
+    </div>
+
+    <div class="tl-entry reveal">
+      <div class="tl-dot"></div>
+      <div class="tl-header" onclick="tl(this)">
+        <div class="tl-left">
+          <div class="tl-co-row"><span class="tl-co">VMware</span><span class="tl-badge remote">Remote</span><span class="tl-badge acquisition">Broadcom Acquisition</span></div>
+          <div class="tl-role">Self-Service Content Strategist, Global Support</div>
+        </div>
+        <div class="tl-right"><div class="tl-yr">2022 – 2024</div><div class="tl-chev">▾</div></div>
+      </div>
+      <div class="tl-body"><div class="tl-inner">
+        <p class="tl-sum">Stepped into strategic leadership after the director departed during the Broadcom acquisition. Owned the full omnichannel self-service strategy: KB, YouTube, blog, social, community forums, and AI chatbot content. Role ended due to Broadcom acquisition redundancies.</p>
+        <div class="tl-cl">Case Study</div>
+        <div class="tl-ct">Omnichannel Self-Service Ecosystem on Zero Budget</div>
+        <p class="tl-cd">Built a zero-budget video programme with volunteer SMEs, growing to 30K+ subscribers. Implemented KCS, increasing KB usage by 35%. Optimised IBM Watson chatbot decision trees for high-deflection scenarios. Used early ChatGPT to automate customer feedback analysis.</p>
+        <div class="tl-ms">
+          <div class="tl-m"><span class="v">30K+</span><span class="l">YouTube Subscribers</span></div>
+          <div class="tl-m"><span class="v">+35%</span><span class="l">KB Article Usage</span></div>
+          <div class="tl-m"><span class="v">10%+</span><span class="l">Contact Deflection</span></div>
+          <div class="tl-m"><span class="v">$0</span><span class="l">Budget</span></div>
+        </div>
+      </div></div>
+    </div>
+
+    <div class="tl-entry reveal">
+      <div class="tl-dot"></div>
+      <div class="tl-header" onclick="tl(this)">
+        <div class="tl-left">
+          <div class="tl-co-row"><span class="tl-co">Blizzard Entertainment</span><span class="tl-badge onsite">On-Site · Cork</span></div>
+          <div class="tl-role">Support &amp; Engagement Specialist → Knowledge Architect</div>
+        </div>
+        <div class="tl-right"><div class="tl-yr">2011 – 2022</div><div class="tl-chev">▾</div></div>
+      </div>
+      <div class="tl-body"><div class="tl-inner">
+        <p class="tl-sum">11 years across WoW, Overwatch, and Diablo. From frontline agent to knowledge architect with deep understanding of handling times, SLAs, and cost-per-contact. Trained ML models for toxicity detection and machine translation. Top 1% EMEA for five consecutive years.</p>
+        <div class="tl-cl">Case Study</div>
+        <div class="tl-ct">Customer Knowledge Infrastructure for 20M+ Players</div>
+        <p class="tl-cd">Created 250+ KB articles (EN), translated 300+ (PL). Built Polish gaming vocabulary for SDL Trados machine translation. Annotated 10,000+ Overwatch chat logs for ML toxicity detection (c. 2017). Drove +50% KCS adoption across EMEA. Created the CS Heroes recognition programme.</p>
+        <div class="tl-ms">
+          <div class="tl-m"><span class="v">Top 1%</span><span class="l">5 Consecutive Years</span></div>
+          <div class="tl-m"><span class="v">250+</span><span class="l">KB Articles (EN)</span></div>
+          <div class="tl-m"><span class="v">+50%</span><span class="l">KCS Adoption</span></div>
+          <div class="tl-m"><span class="v">10K+</span><span class="l">ML Annotations</span></div>
+        </div>
+      </div></div>
+    </div>
+
+    <div class="tl-entry reveal">
+      <div class="tl-dot"></div>
+      <div class="tl-header" onclick="tl(this)">
+        <div class="tl-left">
+          <div class="tl-co-row"><span class="tl-co">European Parliament</span><span class="tl-badge onsite">On-Site · Brussels</span><span class="tl-badge contract">Contract</span></div>
+          <div class="tl-role">Chief of Staff to MEP</div>
+        </div>
+        <div class="tl-right"><div class="tl-yr">2003 – 2006</div><div class="tl-chev">▾</div></div>
+      </div>
+      <div class="tl-body"><div class="tl-inner">
+        <p class="tl-sum">Fixed-term parliamentary contract. Full office operations across Brussels, Strasbourg, and Poland. Government liaison, press briefings, NGO relationships. Led a successful campaign for plain language reform.</p>
+        <div class="tl-cl">Case Study</div>
+        <div class="tl-ct">Convincing 10% of EU Parliament to Reform Legal Language</div>
+        <p class="tl-cd">Secured 66 MEP signatures in 3 weeks for a plain language Written Declaration. No alliances, no budget. Organised 2 international events (1,000+ attendees). <a href="https://www.europarl.europa.eu/doceo/document/P-6-2006-DCL-0082_EN.html" target="_blank" rel="noopener noreferrer">View Declaration →</a></p>
+        <div class="tl-ms">
+          <div class="tl-m"><span class="v">66</span><span class="l">MEP Signatures</span></div>
+          <div class="tl-m"><span class="v">66%</span><span class="l">Conversion Rate</span></div>
+          <div class="tl-m"><span class="v">3 wks</span><span class="l">Timeline</span></div>
+          <div class="tl-m"><span class="v">1,000+</span><span class="l">Event Attendees</span></div>
+        </div>
+      </div></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ════════ AI JOURNEY ════════ -->
+<div class="section" id="ai-journey">
+  <div class="s-head reveal"><div class="s-label">AI &amp; ML</div><div class="s-title">AI Journey</div></div>
+  <p class="ai-intro reveal">I didn't start using AI in 2023. I've been building the human-AI interface for customer support since before most people had heard of machine learning.</p>
+  <div class="ai-tl">
+    <div class="ai-item reveal"><div class="ai-dot past"></div><div class="ai-card"><div class="ai-meta"><span class="ai-yr">c. 2017</span><span class="ai-org">Blizzard Entertainment</span></div><div class="ai-title">Machine Translation Training — SDL Trados</div><div class="ai-desc">Built domain-specific Polish gaming vocabulary for SDL Trados machine translation. Taught the system gaming jargon so automated translations could serve an entire language market.</div></div></div>
+    <div class="ai-item reveal"><div class="ai-dot past"></div><div class="ai-card"><div class="ai-meta"><span class="ai-yr">c. 2017 – 2018</span><span class="ai-org">Blizzard Entertainment</span></div><div class="ai-title">ML Training Data — Toxicity Detection for Overwatch</div><div class="ai-desc">Annotated 10,000+ player chat logs, classifying toxic vs. non-toxic interactions to train automated moderation models serving 20M+ players.</div></div></div>
+    <div class="ai-item reveal"><div class="ai-dot mid"></div><div class="ai-card"><div class="ai-meta"><span class="ai-yr">2022 – 2023</span><span class="ai-org">VMware</span></div><div class="ai-title">AI Chatbot Content — IBM Watson</div><div class="ai-desc">Optimised content for IBM Watson chatbot deployment. Ensured decision trees had the right logic, content, and surfacing for high-deflection scenarios.</div></div></div>
+    <div class="ai-item reveal"><div class="ai-dot mid"></div><div class="ai-card"><div class="ai-meta"><span class="ai-yr">2023</span><span class="ai-org">VMware</span></div><div class="ai-title">AI-Powered Feedback Analysis</div><div class="ai-desc">Used early ChatGPT to automate qualitative analysis of customer feedback on help articles. Spotted patterns: low click-through titles, misleading descriptions, customer drop-off points.</div></div></div>
+    <div class="ai-item reveal"><div class="ai-dot now"></div><div class="ai-card feat"><div class="ai-meta"><span class="ai-yr">2024 – 2025</span><span class="ai-org">Microsoft</span></div><div class="ai-title">LLM-Ready Content Architecture — Microsoft Copilot</div><div class="ai-desc">Structured 3,000+ help articles for Copilot and LLM discoverability: schema, formatting, freshness standards, semantic clarity. AI-ready content so customers get answers in-product.</div></div></div>
+    <div class="ai-item reveal"><div class="ai-dot future"></div><div class="ai-card prog"><div class="ai-meta"><span class="ai-yr">2025 – 2026</span><span class="ai-org">Linköping University</span></div><div class="ai-title">AI in Business — Postgraduate Microcredential</div><div class="ai-desc">EU-funded Digital4Business programme. LLMs, machine learning, AI ethics, business applications. Formalising the AI fluency I've been practising for eight years.</div></div></div>
+  </div>
+</div>
+
+<!-- ════════ TESTIMONIALS ════════ -->
+<div class="section" id="testimonials">
+  <div class="s-head reveal"><div class="s-label">Social Proof</div><div class="s-title">What Colleagues Say</div></div>
+  <div class="test-grid">
+    <div class="card test-card feat reveal"><p class="test-text">She has deep knowledge of the content business and brings much more than portfolio management to the table. Her mastery of knowledge management principles allows her to identify and drive improvements. Her portfolio recently achieved the highest content freshness score of all Office portfolios.</p><div class="test-attr"><div class="test-name">Senior Content Publishing Manager</div><div class="test-role">Microsoft · Direct Collaboration</div></div></div>
+    <div class="card test-card reveal"><p class="test-text">Marcela had built a reputation for being an extremely hard worker and always going above and beyond. Even in the most difficult times she shows a positive approach and inspires others around her to do better.</p><div class="test-attr"><div class="test-name">People Manager, Sales &amp; Customer Service</div><div class="test-role">Blizzard Entertainment · Direct Manager</div></div></div>
+    <div class="card test-card reveal"><p class="test-text">She has extensive experience in community support, multimedia content, KCS, and content management. Responsive, adaptable, and highly recommended for any role requiring these capabilities.</p><div class="test-attr"><div class="test-name">Senior Support Product Manager</div><div class="test-role">VMware / Bentley Systems · Direct Manager</div></div></div>
+    <div class="card test-card reveal"><p class="test-text">Extremely organised, reliable, and computer literate. I cannot remember an instance in which she missed a major deadline. She often brought projects in below budget and ahead of schedule.</p><div class="test-attr"><div class="test-name">Former Employer</div><div class="test-role">Professional Reference Letter</div></div></div>
+  </div>
+</div>
+
+<!-- ════════ EDUCATION ════════ -->
+<div class="section" id="education">
+  <div class="s-head reveal"><div class="s-label">Credentials</div><div class="s-title">Education &amp; Certifications</div></div>
+  <div class="edu-cat reveal">University Degrees &amp; Postgraduate Programmes</div>
+  <div class="edu-grid">
+    <div class="card edu-card dark reveal"><div class="badge b-deg">Master's · EQF 7</div><div class="title">Public Administration in the EU</div><div class="inst">University of Opole, Poland</div><div class="yr">2005 · Grade: 5/5</div><div class="desc">Thesis on e-government and IT in public administration. Led directly to European Parliament appointment.</div><a href="https://www.topuniversities.com/universities/university-opole" target="_blank" rel="noopener noreferrer" class="link">View University →</a></div>
+    <div class="card edu-card reveal"><div class="badge b-cert">Diploma</div><div class="title">Management &amp; Leadership with Marketing and Strategy</div><div class="inst">College of Management &amp; IT (CMIT)</div><div class="yr">2016 – 2017</div><div class="desc">ILM-accredited. Project management, managing change, developing people, coaching.</div><a href="https://www.cmit.ie/business-and-management-distance-learning-courses/" target="_blank" rel="noopener noreferrer" class="link">View College →</a></div>
+    <div class="card edu-card reveal"><div class="badge b-cert">PGDip · EQF 7</div><div class="title">Digital Marketing</div><div class="inst">Digital Marketing Institute &amp; BPP University</div><div class="yr">2021</div><div class="desc">Master's level (EQF 7). Accredited by BPP University, London.</div><a href="https://digitalmarketinginstitute.com/students/courses/postgraduate-diploma-in-digital-marketing" target="_blank" rel="noopener noreferrer" class="link">View Programme →</a></div>
+    <div class="card edu-card ip reveal"><div class="badge b-prog">In Progress</div><div class="title">AI in Business</div><div class="inst">Linköping University, Sweden</div><div class="yr">2025 – 2026</div><div class="desc">Part of Digital4Business (€19.92M EU-funded). LLMs, ML, AI ethics, business applications.</div><a href="https://digital4business.eu/module/ai-for-business/" target="_blank" rel="noopener noreferrer" class="link">View Programme →</a></div>
+    <div class="card edu-card ip reveal"><div class="badge b-prog">In Progress</div><div class="title">Digital Transformation</div><div class="inst">Linköping University, Sweden</div><div class="yr">2025 – 2026</div><div class="desc">Digital4Business consortium. EU-funded, ASIIN-accredited.</div><a href="https://digital4business.eu/" target="_blank" rel="noopener noreferrer" class="link">View Programme →</a></div>
+  </div>
+  <div class="edu-cat reveal">Professional Certifications</div>
+  <div class="cert-grid">
+    <div class="card cert-card reveal"><div class="ct">Business Analytics</div><div class="ci">Harvard Business School Online</div><div class="cy">2023</div><div class="cx">Case-method programme. Descriptive statistics, regression analysis, hypothesis testing.</div><a href="https://online.hbs.edu/courses/business-analytics/" target="_blank" rel="noopener noreferrer" class="link">Verify at HBS →</a></div>
+    <div class="card cert-card reveal"><div class="ct">KCS v6 Practitioner</div><div class="ci">Consortium for Service Innovation</div><div class="cy">2022</div><div class="cx">Advanced-level. Proctored 2-hour exam (65 scenario-based questions).</div><a href="https://www.serviceinnovation.org/kcs/kcs-certifications/" target="_blank" rel="noopener noreferrer" class="link">Verify →</a></div>
+    <div class="card cert-card reveal"><div class="ct">KCS v6 Fundamentals</div><div class="ci">Consortium for Service Innovation</div><div class="cy">2022</div><div class="cx">Entry-level KCS. Only authorised certifying body worldwide.</div><a href="https://www.serviceinnovation.org/kcs/kcs-certifications/" target="_blank" rel="noopener noreferrer" class="link">Verify →</a></div>
+    <div class="card cert-card reveal"><div class="ct">Designing Innovative Services</div><div class="ci">Munster Technological University · NFQ 8</div><div class="cy">2025</div><div class="cx">Design thinking, service innovation, prototyping (10 ECTS).</div><a href="https://www.mtu.ie/courses/crbdeis8/" target="_blank" rel="noopener noreferrer" class="link">View →</a></div>
+    <div class="card cert-card reveal"><div class="ct">Digital Marketing Strategy</div><div class="ci">Munster Technological University · NFQ 8</div><div class="cy">2020</div><div class="cx">Website optimisation, analytics, digital strategy.</div><a href="https://www.mtu.ie/courses/crbdgmr8/" target="_blank" rel="noopener noreferrer" class="link">View →</a></div>
+  </div>
+</div>
+
+<!-- ════════ DEI ════════ -->
+<div class="section" id="dei">
+  <div class="s-head reveal"><div class="s-label">Community</div><div class="s-title">DEI &amp; Leadership</div></div>
+  <div class="dei-grid">
+    <div class="card dei-card reveal"><div class="dei-orgs">EA Games · VMware</div><h4>"I Am Remarkable" Facilitator</h4><p>Ran Google's self-promotion workshop programme across two companies. Designed sessions, facilitated exercises, built a pipeline of repeat participants.</p><div class="dei-stat">15+ workshops · 500+ employees</div></div>
+    <div class="card dei-card reveal"><div class="dei-orgs">Blizzard · VMware</div><h4>Women's Network Leadership</h4><p>Led communications for the Blizzard Women's Network and Women@VMware. Created internal hubs, curated content, published newsletters.</p></div>
+    <div class="card dei-card reveal"><div class="dei-orgs">VMware</div><h4>Lean-In Circle Founder</h4><p>Established peer-led professional development forums for mentorship, skill-sharing, and community building.</p></div>
+  </div>
+</div>
+
+<!-- ════════ PERSONAL ════════ -->
+<div class="section" id="personal">
+  <div class="s-head reveal"><div class="s-label">Beyond Work</div><div class="s-title">Personal &amp; Creative</div></div>
+  <div class="pers-grid">
+    <div class="card pers-tile reveal"><h4>Irish Dance</h4><p>Dance parent to a world championship-level competitor. Built a training web app for the community.</p></div>
+    <div class="card pers-tile reveal"><h4>Macro Photography</h4><p>Award-winning photographer. Work featured in the Irish Examiner.</p></div>
+    <div class="card pers-tile reveal"><h4>KM Blog</h4><p>Thought leadership on knowledge management, AI, and service delivery.</p><a href="https://knowledgemanagement.ie/blog/" target="_blank" rel="noopener noreferrer">Read →</a></div>
+    <div class="card pers-tile reveal"><h4>Gospel Choir</h4><p>Member of the CarrigtwoHill Gospel Choir. Community, music, and something completely different.</p></div>
+  </div>
+</div>
+
+<!-- ════════ CTA ════════ -->
+<div class="section">
+  <div class="cta reveal" id="contact">
+    <h3>Let's talk about what your self-service infrastructure could look like.</h3>
+    <p>15+ years of customer enablement, knowledge operations, and programme delivery.</p>
+    <div class="cta-links">
+      <a href="mailto:marseliaglx@gmail.com" class="btn-p">Start the Conversation →</a>
+      <a href="https://www.linkedin.com/in/marcela-gleixner-programmanager/" target="_blank" rel="noopener noreferrer" class="btn-s">LinkedIn</a>
+      <a href="https://knowledgemanagement.ie/blog/" target="_blank" rel="noopener noreferrer" class="btn-s">Blog</a>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<!-- CHATBOT -->
+<button class="cb" onclick="tc()" aria-label="Chat">💬</button>
+<button class="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" id="btt" aria-label="Top">↑</button>
+<div class="cw" id="cw">
+  <div class="cw-h"><h4>Ask About My Experience</h4><button class="cw-x" onclick="tc()">✕</button></div>
+  <div class="cw-b" id="cwb">
+    <div class="cw-i" id="cwi">Pick a question to learn about my approach to customer enablement, programme management, or specific projects.</div>
+    <div class="cw-qs" id="cwq">
+      <button class="cw-q" onclick="sa('stakeholder')">How do you handle stakeholder management?</button>
+      <button class="cw-q" onclick="sa('constraints')">Tell me about innovation under constraints</button>
+      <button class="cw-q" onclick="sa('change')">Describe your change management approach</button>
+      <button class="cw-q" onclick="sa('coord')">How do you coordinate cross-functional projects?</button>
+      <button class="cw-q" onclick="sa('measure')">How do you measure programme success?</button>
+      <button class="cw-q" onclick="sa('kcs')">What's your KCS experience?</button>
+    </div>
+    <div class="cw-a" id="a-stakeholder"><h5>Stakeholder Management</h5><p>Put people in the position to discover the problem themselves.</p><p><strong>VMware:</strong> "Even if this video only works for 1 month but deflects 1,000 contacts, is it worth a few hours?" Let the data make the argument.</p><p><strong>Microsoft:</strong> Coordinated Skype sunset across 7 departments and multiple countries.</p><button class="cw-bk" onclick="rc()">← Back</button></div>
+    <div class="cw-a" id="a-constraints"><h5>Innovation Under Constraints</h5><p><strong>VMware YouTube:</strong> $0 budget. Volunteer council of ~15 engineers. Result: 30K subscribers, 10%+ contact deflection.</p><p>What do we already have? Who is motivated? What's simplest? How do we measure it?</p><button class="cw-bk" onclick="rc()">← Back</button></div>
+    <div class="cw-a" id="a-change"><h5>Change Management</h5><p>I was both KCS practitioner (top 1%) AND change agent. "This methodology helped ME perform at elite level" beats "Corporate says do this."</p><p>People don't resist change. They resist being changed.</p><button class="cw-bk" onclick="rc()">← Back</button></div>
+    <div class="cw-a" id="a-coord"><h5>Cross-Functional Coordination</h5><p><strong>Skype Sunset:</strong> Legal, PR, Product, Marketing, Sales, Support. 400 articles retired, 200 redirected, 5 new. Multiple countries. Zero missed deadlines.</p><button class="cw-bk" onclick="rc()">← Back</button></div>
+    <div class="cw-a" id="a-measure"><h5>Programme Measurement</h5><p><strong>VMware:</strong> 7 data sources before deciding strategy. <strong>Microsoft:</strong> 67→94% freshness. Tracked why content wasn't refreshed and fixed blockers.</p><button class="cw-bk" onclick="rc()">← Back</button></div>
+    <div class="cw-a" id="a-kcs"><h5>KCS Implementation</h5><p><strong>Blizzard:</strong> Top 1% EMEA 5 years. 250+ articles, 300+ translations.</p><p><strong>VMware:</strong> +35% KB usage. Roadshows and cross-functional onboarding.</p><p>The hardest part isn't the methodology. It's sustaining the cultural shift.</p><button class="cw-bk" onclick="rc()">← Back</button></div>
+  </div>
+</div>
+
+<script>
+function tl(h){h.closest('.tl-entry').classList.toggle('open')}
+function tc(){document.getElementById('cw').classList.toggle('open')}
+function sa(id){document.getElementById('cwi').style.display='none';document.getElementById('cwq').style.display='none';document.querySelectorAll('.cw-a').forEach(a=>a.classList.remove('on'));document.getElementById('a-'+id).classList.add('on');document.getElementById('cwb').scrollTop=0}
+function rc(){document.getElementById('cwi').style.display='block';document.getElementById('cwq').style.display='flex';document.querySelectorAll('.cw-a').forEach(a=>a.classList.remove('on'));document.getElementById('cwb').scrollTop=0}
+window.addEventListener('scroll',()=>{document.getElementById('btt').classList.toggle('show',window.pageYOffset>500)});
+
+// Scroll reveal with IntersectionObserver
+const obs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})},{threshold:0.08,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=`${Math.min(i*0.06,0.3)}s`;obs.observe(el)});
+</script>
+</body>
+</html>
