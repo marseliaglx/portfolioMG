@@ -708,50 +708,6 @@ section {
   font-style: normal;
 }
 
-/* Testimonials */
-.testimonials-wrap { position: relative; min-height: 130px; }
-.testimonial-slide {
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  transition: opacity 0.5s ease;
-  pointer-events: none;
-}
-.testimonial-slide.active {
-  opacity: 1;
-  pointer-events: auto;
-  position: relative;
-}
-.testimonial-quote {
-  font-size: 0.82rem;
-  color: var(--text-secondary);
-  line-height: 1.65;
-  font-style: normal;
-  margin-bottom: 0.6rem;
-}
-.testimonial-author {
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: var(--text-tertiary);
-}
-.testimonial-dots {
-  display: flex;
-  gap: 0.4rem;
-  justify-content: center;
-  margin-top: 1rem;
-}
-.t-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--card-border);
-  cursor: pointer;
-  border: none;
-  transition: background 0.3s;
-  padding: 0;
-}
-.t-dot.active { background: var(--teal); }
-
 /* AI timeline bullets */
 .ai-timeline { display: flex; flex-direction: column; gap: 0.5rem; }
 .ai-item {
@@ -1449,22 +1405,15 @@ body.adventure-mode .rune { display: inline; }
     </div>
 
     <!-- 7 AI Experience -->
-    <div class="dash-card c-orange fade-in" aria-label="AI Experience card">
+    <div class="dash-card c-orange fade-in clickable" aria-label="AI experience card" role="link" tabindex="0" onclick="scrollToSection('projects')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();scrollToSection('projects')}">
       <div class="dash-card-header">
         <span class="dash-card-icon" aria-hidden="true"><span class="icon"><svg viewBox="0 0 24 24"><rect x="5" y="7" width="14" height="11" rx="2"/><path d="M12 4v3"/><circle cx="9" cy="12" r="1"/><circle cx="15" cy="12" r="1"/><path d="M9 15h6"/></svg></span></span>
         <div>
           <div class="dash-card-title">AI Experience</div>
-          <div class="dash-card-stat">8 years</div>
+          <div class="dash-card-stat">Jump to projects</div>
         </div>
       </div>
-      <div class="ai-timeline">
-        <div class="ai-item"><span class="ai-year">2017</span><span>ML training data annotation — toxicity detection (Blizzard)</span></div>
-        <div class="ai-item"><span class="ai-year">2017</span><span>Machine translation vocabulary (SDL Trados)</span></div>
-        <div class="ai-item"><span class="ai-year">2022</span><span>IBM Watson chatbot content optimisation (VMware)</span></div>
-        <div class="ai-item"><span class="ai-year">2023</span><span>ChatGPT for feedback analysis (VMware)</span></div>
-        <div class="ai-item"><span class="ai-year">2024–25</span><span>LLM/Copilot content architecture (Microsoft)</span></div>
-        <div class="ai-item"><span class="ai-year">2025</span><span>AI for Business postgrad (Linköping University)</span></div>
-      </div>
+      <p>I have hands-on experience with AI tools and workflows across content operations, analytics, and LLM readiness. Open Featured Projects for examples.</p>
     </div>
 
     <!-- 8 Testimonials -->
@@ -1473,27 +1422,10 @@ body.adventure-mode .rune { display: inline; }
         <span class="dash-card-icon" aria-hidden="true"><span class="icon"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H8l-4 3V5Z"/></svg></span></span>
         <div>
           <div class="dash-card-title">Testimonials</div>
+          <div class="dash-card-stat">Jump to recommendations</div>
         </div>
       </div>
-      <div class="testimonials-wrap" id="testimonials-wrap">
-        <div class="testimonial-slide active" id="t-0">
-          <p class="testimonial-quote">"Her portfolio recently achieved the highest content freshness score of all Office portfolios."</p>
-          <p class="testimonial-author">— Principal Content Publishing Manager, Microsoft</p>
-        </div>
-        <div class="testimonial-slide" id="t-1">
-          <p class="testimonial-quote">"Extensive experience in community support, multimedia content, KCS and content management. Highly recommended."</p>
-          <p class="testimonial-author">— Senior Support Product Manager, VMware</p>
-        </div>
-        <div class="testimonial-slide" id="t-2">
-          <p class="testimonial-quote">"An extremely hard worker, always going above and beyond. She inspires others to do better."</p>
-          <p class="testimonial-author">— People Manager, Activision Blizzard</p>
-        </div>
-      </div>
-      <div class="testimonial-dots" role="tablist" aria-label="Testimonial navigation">
-        <button class="t-dot active" onclick="goToTestimonial(0)" aria-label="Testimonial 1" role="tab" aria-selected="true"></button>
-        <button class="t-dot" onclick="goToTestimonial(1)" aria-label="Testimonial 2" role="tab" aria-selected="false"></button>
-        <button class="t-dot" onclick="goToTestimonial(2)" aria-label="Testimonial 3" role="tab" aria-selected="false"></button>
-      </div>
+      <p>Read direct feedback from managers and partners on delivery, leadership, and measurable impact.</p>
     </div>
 
   </div>
@@ -1911,37 +1843,6 @@ function toggleProject(idx) {
   setTimeout(function() {
     accordions[idx].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }, 100);
-}
-
-// ---- Testimonials ----
-var currentTestimonial = 0;
-var testimonialCount = 3;
-var testimonialTimer;
-
-function goToTestimonial(idx) {
-  var slides = document.querySelectorAll('.testimonial-slide');
-  var dots = document.querySelectorAll('.t-dot');
-
-  slides.forEach(function(s) { s.classList.remove('active'); });
-  dots.forEach(function(d) { d.classList.remove('active'); d.setAttribute('aria-selected', 'false'); });
-
-  if (slides[idx]) slides[idx].classList.add('active');
-  if (dots[idx]) { dots[idx].classList.add('active'); dots[idx].setAttribute('aria-selected', 'true'); }
-
-  currentTestimonial = idx;
-}
-
-function advanceTestimonial() {
-  goToTestimonial((currentTestimonial + 1) % testimonialCount);
-}
-
-testimonialTimer = setInterval(advanceTestimonial, 5000);
-
-// Pause on hover
-var tWrap = document.getElementById('testimonials-wrap');
-if (tWrap) {
-  tWrap.addEventListener('mouseenter', function() { clearInterval(testimonialTimer); });
-  tWrap.addEventListener('mouseleave', function() { testimonialTimer = setInterval(advanceTestimonial, 5000); });
 }
 
 // ---- Day in Life ----
