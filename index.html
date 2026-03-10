@@ -507,6 +507,211 @@
             line-height: 1.6;
             text-align: left;
         }
+        .strategic-focus {
+            background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+        .focus-container {
+            max-width: 900px;
+        }
+        .focus-intro {
+            font-size: 1.35rem;
+            line-height: 1.6;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+        .focus-text {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+        .focus-problem {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: var(--accent-magenta);
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: rgba(255, 0, 160, 0.05);
+            border-left: 4px solid var(--accent-magenta);
+            border-radius: 4px;
+        }
+        .focus-intersection {
+            margin-bottom: 2.5rem;
+            padding: 1.5rem;
+            background: rgba(0, 240, 255, 0.03);
+            border: 1px solid rgba(0, 240, 255, 0.1);
+            border-radius: 12px;
+        }
+        .intersection-label {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        .intersection-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-bottom: 1.2rem;
+        }
+        .intersection-items span {
+            display: inline-block;
+            padding: 0.6rem 1.2rem;
+            background: rgba(0, 240, 255, 0.08);
+            border: 1px solid rgba(0, 240, 255, 0.15);
+            border-radius: 6px;
+            color: var(--accent-cyan);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        .focus-intersection p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: var(--text-secondary);
+        }
+        .business-value {
+            margin-bottom: 2.5rem;
+        }
+        .business-label {
+            font-size: 1.1rem;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        .business-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .business-list li {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+        }
+        .business-list li:before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: var(--accent-magenta);
+            border-radius: 50%;
+            margin-left: -1.5rem;
+            margin-right: 0.8rem;
+        }
+        .ai-focus {
+            margin-bottom: 2.5rem;
+            padding: 1.5rem;
+            background: rgba(184, 41, 221, 0.05);
+            border-left: 4px solid var(--accent-purple);
+            border-radius: 4px;
+        }
+        .ai-label {
+            font-size: 1.05rem;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        .ai-focus p {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+            margin-bottom: 0.8rem;
+        }
+        .ai-focus p em {
+            color: var(--accent-cyan);
+            font-style: italic;
+        }
+        .difference {
+            margin-bottom: 2.5rem;
+        }
+        .difference-label {
+            font-size: 1.05rem;
+            color: var(--text-primary);
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+        }
+        .difference > p {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+            margin-bottom: 0.8rem;
+        }
+        .difference-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .difference-list li {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+        }
+        .difference-list li:before {
+            content: '⭐';
+            margin-left: -1.5rem;
+            margin-right: 0.6rem;
+        }
+        .global-perspective {
+            margin-bottom: 2.5rem;
+            padding: 1.5rem;
+            background: rgba(0, 240, 255, 0.03);
+            border: 1px solid rgba(0, 240, 255, 0.1);
+            border-radius: 12px;
+        }
+        .perspective-label {
+            font-size: 1.05rem;
+            color: var(--text-primary);
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+        }
+        .global-perspective p {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+        }
+        .hiring-note {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, rgba(255, 0, 160, 0.05), rgba(0, 240, 255, 0.05));
+            border: 1px solid rgba(255, 0, 160, 0.15);
+            border-radius: 12px;
+        }
+        .hiring-label {
+            font-size: 1.05rem;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        .hiring-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 1rem 0;
+        }
+        .hiring-list li {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            padding: 0.4rem 0;
+            padding-left: 1.5rem;
+        }
+        .hiring-list li:before {
+            content: '•';
+            margin-left: -1.5rem;
+            margin-right: 0.8rem;
+            color: var(--accent-magenta);
+        }
+        .hiring-note p:last-child {
+            font-size: 1rem;
+            color: var(--accent-cyan);
+            font-weight: 500;
+        }
         .timeline {
             position: relative;
             padding-left: 3rem;
@@ -899,6 +1104,101 @@
             <div class="snapshot-value">Certified</div>
             <div class="snapshot-desc professional-only">KCS v6, Analytics, AI Governance</div>
             <div class="snapshot-desc nerdy-only">Official seals of mastery</div>
+        </div>
+    </section>
+
+    <!-- STRATEGIC FOCUS -->
+    <section class="content-section strategic-focus" id="about">
+        <div class="focus-container">
+            <p class="focus-intro professional-only"><strong>I design the invisible systems that help millions of people find answers instantly.</strong></p>
+            <p class="focus-intro nerdy-only"><strong>I architect the hidden systems that turn chaos into clarity across digital realms.</strong></p>
+
+            <p class="focus-text professional-only">For over 15 years in global technology organizations like Microsoft, VMware, Electronic Arts, and Blizzard Entertainment, I've built scalable content ecosystems, knowledge frameworks, and AI-ready information architectures that reduce support costs, improve customer satisfaction, and turn chaos into clarity.</p>
+            <p class="focus-text nerdy-only">For 15+ years across legendary organizations, I've built the knowledge systems, content architectures, and information frameworks that transform scattered chaos into optimized, intelligent ecosystems.</p>
+
+            <p class="focus-problem professional-only"><em>Most organizations don't struggle with lack of content. They struggle with content that doesn't work.</em> That's where I come in.</p>
+            <p class="focus-problem nerdy-only"><em>Most realms don't lack information. They lack information that works.</em> I fix that.</p>
+
+            <div class="focus-intersection professional-only">
+                <p class="intersection-label">I sit at the intersection of:</p>
+                <div class="intersection-items">
+                    <span>Content Strategy</span>
+                    <span>Knowledge Management</span>
+                    <span>Service Operations</span>
+                    <span>AI Readiness</span>
+                    <span>Program Leadership</span>
+                </div>
+                <p>I build the processes, governance models, workflows, and analytics systems that make content perform — for users, for support teams, and for the business.</p>
+            </div>
+
+            <div class="focus-intersection nerdy-only">
+                <p class="intersection-label">My specializations:</p>
+                <div class="intersection-items">
+                    <span>Knowledge Architecture</span>
+                    <span>Systems Optimization</span>
+                    <span>Ecosystem Engineering</span>
+                    <span>AI Integration</span>
+                    <span>Quest Leadership</span>
+                </div>
+            </div>
+
+            <div class="business-value professional-only">
+                <p class="business-label"><strong>What I Actually Do (In Business Terms)</strong></p>
+                <ul class="business-list">
+                    <li>✓ Reduce customer support costs through smarter self-service ecosystems</li>
+                    <li>✓ Prepare knowledge bases for AI tools like Copilot and LLM-powered assistants</li>
+                    <li>✓ Lead complex cross-functional programs across global teams</li>
+                    <li>✓ Transform scattered information into structured, scalable systems</li>
+                    <li>✓ Connect content quality to measurable business outcomes</li>
+                </ul>
+            </div>
+
+            <div class="business-value nerdy-only">
+                <p class="business-label"><strong>My Core Abilities</strong></p>
+                <ul class="business-list">
+                    <li>✓ Transform chaos into optimized, intelligent systems</li>
+                    <li>✓ Master complex cross-realm operations</li>
+                    <li>✓ Engineer AI-ready knowledge architectures</li>
+                    <li>✓ Scale initiatives from zero budget to global impact</li>
+                    <li>✓ Connect operations to strategic outcomes</li>
+                </ul>
+            </div>
+
+            <div class="ai-focus professional-only">
+                <p class="ai-label"><strong>🤖 AI & Innovation Focus</strong></p>
+                <p>I don't just "use AI tools." I design content ecosystems that AI can understand, trust, and surface. I structure enterprise knowledge for LLM consumption, lead AI optimization testing programs, and use machine learning for content clustering and deduplication. I've been an early adopter of AI in enterprise content workflows since 2022.</p>
+                <p><em>I prepare organizations for how people will find information tomorrow.</em></p>
+            </div>
+
+            <div class="difference professional-only">
+                <p class="difference-label"><strong>🧩 How I'm Different</strong></p>
+                <p>Many professionals manage content. I build the systems that make content work at scale.</p>
+                <p>I'm known for:</p>
+                <ul class="difference-list">
+                    <li>⭐ Expanding beyond role definitions and owning neglected initiatives</li>
+                    <li>⭐ Combining strategy with hands-on execution</li>
+                    <li>⭐ Building programs from zero budget to global scale</li>
+                    <li>⭐ Translating complexity into structured systems</li>
+                    <li>⭐ Connecting content performance to financial impact</li>
+                </ul>
+            </div>
+
+            <div class="global-perspective professional-only">
+                <p class="perspective-label"><strong>🌍 Global Perspective</strong></p>
+                <p>I've worked across multinational environments, government institutions, and global tech enterprises — leading initiatives across regions, languages, and cultures. From the European Parliament to enterprise AI ecosystems, I bring operational discipline, strategic thinking, and calm leadership in complex environments.</p>
+            </div>
+
+            <div class="hiring-note professional-only">
+                <p class="hiring-label"><strong>🎯 If You're Hiring For:</strong></p>
+                <ul class="hiring-list">
+                    <li>Content Strategy Leadership</li>
+                    <li>Knowledge Management Transformation</li>
+                    <li>AI-Ready Content Operations</li>
+                    <li>Self-Service & Deflection Strategy</li>
+                    <li>Program Management in Service Operations</li>
+                </ul>
+                <p><em>We should talk.</em></p>
+            </div>
         </div>
     </section>
 
