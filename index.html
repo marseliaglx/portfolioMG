@@ -249,50 +249,148 @@
             padding: 3.5rem 5%;
             max-width: 1300px;
             margin: 0 auto 3rem;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-            gap: 1.5rem;
             border-top: 1px solid var(--border-color);
             border-bottom: 1px solid var(--border-color);
+            background: linear-gradient(180deg, rgba(18, 18, 26, 0.5) 0%, rgba(10, 10, 15, 0.3) 100%);
+        }
+        .dashboard-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .dashboard-header h3 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, var(--accent-magenta), var(--accent-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .dashboard-subtitle {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+        .snapshot-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
         }
         .snapshot-item {
             text-align: center;
-            padding: 1.5rem 1rem;
-            background: rgba(18, 18, 26, 0.4);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 12px;
+            padding: 1.75rem 1.25rem;
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 0, 160, 0.1);
+            border-radius: 16px;
             transition: all 0.3s ease;
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        .snapshot-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-magenta), var(--accent-cyan));
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
         .snapshot-item:hover {
-            background: rgba(255, 0, 160, 0.05);
-            border-color: rgba(255, 0, 160, 0.15);
-            transform: translateY(-2px);
+            background: linear-gradient(135deg, rgba(255, 0, 160, 0.08), rgba(0, 240, 255, 0.08));
+            border-color: rgba(255, 0, 160, 0.25);
+            transform: translateY(-6px);
+            box-shadow: 0 12px 32px rgba(255, 0, 160, 0.12);
+        }
+        .snapshot-item:hover::before {
+            opacity: 1;
+        }
+        .snapshot-item.expanded {
+            background: linear-gradient(135deg, rgba(255, 0, 160, 0.1), rgba(0, 240, 255, 0.1));
+            border-color: var(--accent-magenta);
+            box-shadow: 0 12px 32px rgba(255, 0, 160, 0.15);
+        }
+        .snapshot-item.expanded::before {
+            opacity: 1;
+        }
+        .snapshot-icon {
+            font-size: 2rem;
+            margin-bottom: 0.8rem;
         }
         .snapshot-label {
             font-size: 0.75rem;
             color: var(--text-muted);
             text-transform: uppercase;
             letter-spacing: 1px;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.6rem;
             font-weight: 600;
         }
         .snapshot-value {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             font-weight: 700;
             background: linear-gradient(135deg, var(--accent-magenta), var(--accent-cyan));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.8rem;
         }
         .snapshot-desc {
             font-size: 0.8rem;
             color: var(--text-secondary);
-            line-height: 1.3;
+            line-height: 1.4;
+            margin-bottom: 1rem;
+            min-height: 2.2em;
+        }
+        .snapshot-details {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.8rem;
+            padding: 0.8rem 0;
+            border-top: 1px solid rgba(255, 0, 160, 0.1);
+            border-bottom: 1px solid rgba(255, 0, 160, 0.1);
+            animation: slideDown 0.3s ease;
+        }
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                max-height: 0;
+                margin-bottom: 0;
+            }
+            to {
+                opacity: 1;
+                max-height: 200px;
+                margin-bottom: 0.8rem;
+            }
+        }
+        .detail-item {
+            margin-bottom: 0.6rem;
+            line-height: 1.5;
+        }
+        .detail-item strong {
+            color: var(--accent-cyan);
+            font-weight: 600;
+        }
+        .snapshot-cta {
+            font-size: 0.8rem;
+            color: var(--accent-magenta);
+            font-weight: 600;
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+        .snapshot-item:hover .snapshot-cta {
+            opacity: 1;
+            transform: translateX(3px);
+        }
+        .snapshot-item.expanded .snapshot-cta {
+            color: var(--accent-cyan);
+            opacity: 1;
         }
         .trusted-section {
             padding: 3rem 5%;
@@ -1056,54 +1154,174 @@
     </section>
 
     <!-- EXECUTIVE SNAPSHOT STRIP -->
-    <section class="executive-snapshot">
-        <div class="snapshot-item">
-            <div class="snapshot-label">Experience</div>
-            <div class="snapshot-value">15+ Years</div>
-            <div class="snapshot-desc professional-only">Global technology & public sector leadership</div>
-            <div class="snapshot-desc nerdy-only">Epic campaigns across realms</div>
+    <section class="executive-snapshot" id="executive-dashboard">
+        <div class="dashboard-header">
+            <h3 class="professional-only">Executive Overview Dashboard</h3>
+            <h3 class="nerdy-only">Character Profile Dashboard</h3>
+            <p class="dashboard-subtitle professional-only">Click any tile to explore deeper</p>
+            <p class="dashboard-subtitle nerdy-only">Dig deeper into each realm</p>
         </div>
-        <div class="snapshot-item">
-            <div class="snapshot-label">Enterprise Scope</div>
-            <div class="snapshot-value">Global</div>
-            <div class="snapshot-desc professional-only">Multinational ecosystem programs</div>
-            <div class="snapshot-desc nerdy-only">Cross-realm operations</div>
-        </div>
-        <div class="snapshot-item">
-            <div class="snapshot-label">Specialization</div>
-            <div class="snapshot-value">AI Governance</div>
-            <div class="snapshot-desc professional-only">Knowledge systems & content operations</div>
-            <div class="snapshot-desc nerdy-only">Systems architecture & optimization</div>
-        </div>
-        <div class="snapshot-item">
-            <div class="snapshot-label">Sectors</div>
-            <div class="snapshot-value">Both</div>
-            <div class="snapshot-desc professional-only">Private sector & public institutions</div>
-            <div class="snapshot-desc nerdy-only">All kingdoms served</div>
-        </div>
-        <div class="snapshot-item">
-            <div class="snapshot-label">Languages</div>
-            <div class="snapshot-value">Bilingual</div>
-            <div class="snapshot-desc professional-only">English & Polish fluency</div>
-            <div class="snapshot-desc nerdy-only">Master of two tongues</div>
-        </div>
-        <div class="snapshot-item">
-            <div class="snapshot-label">Leadership</div>
-            <div class="snapshot-value">Distributed</div>
-            <div class="snapshot-desc professional-only">Remote & multinational teams</div>
-            <div class="snapshot-desc nerdy-only">Across the digital realm</div>
-        </div>
-        <div class="snapshot-item">
-            <div class="snapshot-label">Education</div>
-            <div class="snapshot-value">Advanced</div>
-            <div class="snapshot-desc professional-only">Master's degree + specializations</div>
-            <div class="snapshot-desc nerdy-only">Scholarly achievements</div>
-        </div>
-        <div class="snapshot-item">
-            <div class="snapshot-label">Credentials</div>
-            <div class="snapshot-value">Certified</div>
-            <div class="snapshot-desc professional-only">KCS v6, Analytics, AI Governance</div>
-            <div class="snapshot-desc nerdy-only">Official seals of mastery</div>
+
+        <div class="snapshot-grid">
+            <!-- Experience Tile -->
+            <div class="snapshot-item" data-section="experience">
+                <div class="snapshot-icon">⏱️</div>
+                <div class="snapshot-label">Experience</div>
+                <div class="snapshot-value">15+ Years</div>
+                <div class="snapshot-desc professional-only">Global technology & public sector leadership</div>
+                <div class="snapshot-desc nerdy-only">Epic campaigns across realms</div>
+                <div class="snapshot-details professional-only" style="display:none;">
+                    <div class="detail-item"><strong>Private Sector:</strong> Microsoft, VMware, EA, Blizzard</div>
+                    <div class="detail-item"><strong>Public Sector:</strong> European Parliament</div>
+                    <div class="detail-item"><strong>Scale:</strong> Programs spanning millions of users</div>
+                </div>
+                <div class="snapshot-details nerdy-only" style="display:none;">
+                    <div class="detail-item"><strong>Legendary Organizations:</strong> Microsoft, VMware, EA, Blizzard</div>
+                    <div class="detail-item"><strong>Grand Institutions:</strong> European Parliament</div>
+                    <div class="detail-item"><strong>Realm Scale:</strong> Millions of inhabitants served</div>
+                </div>
+                <div class="snapshot-cta">Learn more →</div>
+            </div>
+
+            <!-- Enterprise Scope Tile -->
+            <div class="snapshot-item" data-section="enterprise">
+                <div class="snapshot-icon">🌍</div>
+                <div class="snapshot-label">Enterprise Scope</div>
+                <div class="snapshot-value">Global</div>
+                <div class="snapshot-desc professional-only">Multinational ecosystem programs</div>
+                <div class="snapshot-desc nerdy-only">Cross-realm operations</div>
+                <div class="snapshot-details professional-only" style="display:none;">
+                    <div class="detail-item"><strong>Geographic Coverage:</strong> North America, Europe, APAC</div>
+                    <div class="detail-item"><strong>Teams:</strong> 70+ knowledge owners, 25+ writers</div>
+                    <div class="detail-item"><strong>Reach:</strong> Hundreds of millions of users</div>
+                </div>
+                <div class="snapshot-details nerdy-only" style="display:none;">
+                    <div class="detail-item"><strong>Territories:</strong> All corners of the realm</div>
+                    <div class="detail-item"><strong>Armies:</strong> 70+ allies, 25+ scribes</div>
+                    <div class="detail-item"><strong>Dominion:</strong> Hundreds of millions served</div>
+                </div>
+                <div class="snapshot-cta">Learn more →</div>
+            </div>
+
+            <!-- Specialization Tile -->
+            <div class="snapshot-item" data-section="skills">
+                <div class="snapshot-icon">🎯</div>
+                <div class="snapshot-label">Specialization</div>
+                <div class="snapshot-value">AI Governance</div>
+                <div class="snapshot-desc professional-only">Knowledge systems & content operations</div>
+                <div class="snapshot-desc nerdy-only">Systems architecture & optimization</div>
+                <div class="snapshot-details professional-only" style="display:none;">
+                    <div class="detail-item"><strong>Core Focus:</strong> AI-ready content ecosystems</div>
+                    <div class="detail-item"><strong>Expertise:</strong> LLM readiness, structured content</div>
+                    <div class="detail-item"><strong>Innovation:</strong> Early AI adoption (2022+)</div>
+                </div>
+                <div class="snapshot-details nerdy-only" style="display:none;">
+                    <div class="detail-item"><strong>Mastery:</strong> Intelligent system design</div>
+                    <div class="detail-item"><strong>Powers:</strong> AI architecture, optimization</div>
+                    <div class="detail-item"><strong>Innovation:</strong> Magical AI integration</div>
+                </div>
+                <div class="snapshot-cta">Learn more →</div>
+            </div>
+
+            <!-- Sectors Tile -->
+            <div class="snapshot-item" data-section="sectors">
+                <div class="snapshot-icon">🏢</div>
+                <div class="snapshot-label">Sectors</div>
+                <div class="snapshot-value">Both</div>
+                <div class="snapshot-desc professional-only">Private sector & public institutions</div>
+                <div class="snapshot-desc nerdy-only">All kingdoms served</div>
+                <div class="snapshot-details professional-only" style="display:none;">
+                    <div class="detail-item"><strong>Tech Giants:</strong> Microsoft, EA, VMware, Blizzard</div>
+                    <div class="detail-item"><strong>Government:</strong> European Parliament</div>
+                    <div class="detail-item"><strong>Expertise:</strong> Navigating both cultures</div>
+                </div>
+                <div class="snapshot-details nerdy-only" style="display:none;">
+                    <div class="detail-item"><strong>Legendary Realms:</strong> Microsoft, EA, VMware, Blizzard</div>
+                    <div class="detail-item"><strong>Grand Halls:</strong> European Parliament</div>
+                    <div class="detail-item"><strong>Mastery:</strong> Cross-kingdom diplomacy</div>
+                </div>
+                <div class="snapshot-cta">Learn more →</div>
+            </div>
+
+            <!-- Languages Tile -->
+            <div class="snapshot-item" data-section="languages">
+                <div class="snapshot-icon">🗣️</div>
+                <div class="snapshot-label">Languages</div>
+                <div class="snapshot-value">Bilingual</div>
+                <div class="snapshot-desc professional-only">English & Polish fluency</div>
+                <div class="snapshot-desc nerdy-only">Master of two tongues</div>
+                <div class="snapshot-details professional-only" style="display:none;">
+                    <div class="detail-item"><strong>English:</strong> Full professional fluency</div>
+                    <div class="detail-item"><strong>Polish:</strong> Native proficiency</div>
+                    <div class="detail-item"><strong>Value:</strong> Bridges cultural gaps in global teams</div>
+                </div>
+                <div class="snapshot-details nerdy-only" style="display:none;">
+                    <div class="detail-item"><strong>English Tongue:</strong> Master level</div>
+                    <div class="detail-item"><strong>Polish Runes:</strong> Native magic</div>
+                    <div class="detail-item"><strong>Power:</strong> Speaks across all lands</div>
+                </div>
+                <div class="snapshot-cta">Learn more →</div>
+            </div>
+
+            <!-- Leadership Tile -->
+            <div class="snapshot-item" data-section="leadership">
+                <div class="snapshot-icon">👥</div>
+                <div class="snapshot-label">Leadership</div>
+                <div class="snapshot-value">Distributed</div>
+                <div class="snapshot-desc professional-only">Remote & multinational teams</div>
+                <div class="snapshot-desc nerdy-only">Across the digital realm</div>
+                <div class="snapshot-details professional-only" style="display:none;">
+                    <div class="detail-item"><strong>Experience:</strong> Managing 70+ remote knowledge owners</div>
+                    <div class="detail-item"><strong>Model:</strong> Asynchronous, autonomy-first</div>
+                    <div class="detail-item"><strong>Impact:</strong> Coordinated global program execution</div>
+                </div>
+                <div class="snapshot-details nerdy-only" style="display:none;">
+                    <div class="detail-item"><strong>Legions:</strong> 70+ remote allies across realms</div>
+                    <div class="detail-item"><strong>Command Style:</strong> Empowerment & autonomy</div>
+                    <div class="detail-item"><strong>Achievement:</strong> Synchronized global campaigns</div>
+                </div>
+                <div class="snapshot-cta">Learn more →</div>
+            </div>
+
+            <!-- Education Tile -->
+            <div class="snapshot-item" data-section="education">
+                <div class="snapshot-icon">🎓</div>
+                <div class="snapshot-label">Education</div>
+                <div class="snapshot-value">Advanced</div>
+                <div class="snapshot-desc professional-only">Master's degree + specializations</div>
+                <div class="snapshot-desc nerdy-only">Scholarly achievements</div>
+                <div class="snapshot-details professional-only" style="display:none;">
+                    <div class="detail-item"><strong>Master's Degree:</strong> Strategic management</div>
+                    <div class="detail-item"><strong>Specializations:</strong> Knowledge management, AI systems</div>
+                    <div class="detail-item"><strong>Certifications:</strong> 7 professional credentials</div>
+                </div>
+                <div class="snapshot-details nerdy-only" style="display:none;">
+                    <div class="detail-item"><strong>Advanced Scrolls:</strong> Strategic mastery</div>
+                    <div class="detail-item"><strong>Specializations:</strong> Knowledge & AI magic</div>
+                    <div class="detail-item"><strong>Seals of Learning:</strong> 7 official certifications</div>
+                </div>
+                <div class="snapshot-cta">Explore →</div>
+            </div>
+
+            <!-- Credentials Tile -->
+            <div class="snapshot-item" data-section="credentials">
+                <div class="snapshot-icon">✓</div>
+                <div class="snapshot-label">Credentials</div>
+                <div class="snapshot-value">Certified</div>
+                <div class="snapshot-desc professional-only">KCS v6, Analytics, AI Governance</div>
+                <div class="snapshot-desc nerdy-only">Official seals of mastery</div>
+                <div class="snapshot-details professional-only" style="display:none;">
+                    <div class="detail-item"><strong>Certifications:</strong> KCS v6 Practitioner, Google Analytics, AI Governance</div>
+                    <div class="detail-item"><strong>Specializations:</strong> Business Analytics, AI readiness</div>
+                    <div class="detail-item"><strong>Recognition:</strong> Industry-recognized credentials</div>
+                </div>
+                <div class="snapshot-details nerdy-only" style="display:none;">
+                    <div class="detail-item"><strong>Seals Earned:</strong> KCS v6, Analytics mastery, AI magic</div>
+                    <div class="detail-item"><strong>Achievements:</strong> Specialized in analytics & systems</div>
+                    <div class="detail-item"><strong>Distinction:</strong> Honored across the realms</div>
+                </div>
+                <div class="snapshot-cta">View all →</div>
+            </div>
         </div>
     </section>
 
@@ -1649,6 +1867,47 @@
             if (html.getAttribute('data-theme') === 'nerdy') {
                 toggle.classList.add('active');
             }
+
+            // Interactive Dashboard Functionality
+            const snapshotItems = document.querySelectorAll('.snapshot-item');
+
+            snapshotItems.forEach(item => {
+                item.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const isExpanded = this.classList.contains('expanded');
+                    const section = this.getAttribute('data-section');
+
+                    // Close all other expanded items
+                    snapshotItems.forEach(otherItem => {
+                        if (otherItem !== this) {
+                            otherItem.classList.remove('expanded');
+                        }
+                    });
+
+                    if (isExpanded) {
+                        // Collapse if already expanded
+                        this.classList.remove('expanded');
+                    } else {
+                        // Expand and show details
+                        this.classList.add('expanded');
+
+                        // Smooth scroll to section if not on dashboard
+                        setTimeout(() => {
+                            const targetSection = document.getElementById(section);
+                            if (targetSection && window.scrollY > 1000) {
+                                targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                            }
+                        }, 500);
+                    }
+                });
+
+                // Show details on hover (optional enhancement)
+                item.addEventListener('mouseenter', function() {
+                    if (!this.classList.contains('expanded')) {
+                        // Optional: Can add subtle preview here
+                    }
+                });
+            });
         });
     </script>
 </body>
