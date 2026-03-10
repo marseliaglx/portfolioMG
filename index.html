@@ -505,7 +505,7 @@ section {
 .dash-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2, auto);
+  grid-template-rows: repeat(3, auto);
   gap: 1.25rem;
 }
 
@@ -1180,12 +1180,12 @@ body.adventure-mode .rune { display: inline; }
   </ul>
   <div class="nav-right">
     <div class="theme-toggle-wrap">
-      <span class="theme-toggle-label">Theme</span>
+      <span class="theme-toggle-label" id="mode-label">Professional</span>
       <button
         class="theme-toggle-btn"
         id="theme-toggle"
         aria-pressed="false"
-        aria-label="Toggle high contrast theme"
+        aria-label="Toggle between Professional and Nerd Mode"
         onclick="toggleTheme()"
       >
         <span id="theme-icon-pro" class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 7h18v11H3z"/><path d="M9 7V5a3 3 0 0 1 6 0v2"/></svg></span>
@@ -1315,9 +1315,9 @@ body.adventure-mode .rune { display: inline; }
 <!-- ═══════════════════════════ DASHBOARD GRID ═══════════════════════════ -->
 <section id="experience" class="profile-overview" aria-labelledby="experience-heading">
   <div class="section-header fade-in">
-    <p class="section-label">At a Glance</p>
-    <h2 class="section-title" id="experience-heading">Profile Overview</h2>
-    <p class="section-sub">Everything you need to know — in eight cards.</p>
+    <p class="section-label">360° Professional Profile</p>
+    <h2 class="section-title" id="experience-heading">Executive Snapshot</h2>
+    <p class="section-sub">Complete professional intelligence at a glance. Click any card to explore deeper.</p>
   </div>
 
   <div class="dash-grid">
@@ -1465,6 +1465,78 @@ body.adventure-mode .rune { display: inline; }
         </div>
       </div>
       <p>Read direct feedback from managers and partners on delivery, leadership, and measurable impact.</p>
+    </div>
+
+    <!-- 9 Global Scope -->
+    <div class="dash-card c-accent fade-in" aria-label="Global Scope and Multicultural Leadership card">
+      <div class="dash-card-header">
+        <span class="dash-card-icon" aria-hidden="true"><span class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span></span>
+        <div>
+          <div class="dash-card-title">Global Scope</div>
+          <div class="dash-card-stat">Multinational Leadership</div>
+        </div>
+      </div>
+      <ul>
+        <li>EMEA, APAC, North America operations</li>
+        <li>Microsoft (US tech, global teams)</li>
+        <li>EU Parliament (pan-European context)</li>
+        <li>Multilingual, multicultural environments</li>
+        <li>Remote-first global coordination</li>
+      </ul>
+    </div>
+
+    <!-- 10 Work Environments -->
+    <div class="dash-card c-green fade-in" aria-label="Work Environments card">
+      <div class="dash-card-header">
+        <span class="dash-card-icon" aria-hidden="true"><span class="icon"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="8" height="14" rx="1"/><rect x="13" y="5" width="8" height="14" rx="1"/><path d="M7 9h4M7 12h4M17 9h4M17 12h4"/></svg></span></span>
+        <div>
+          <div class="dash-card-title">Work Environments</div>
+          <div class="dash-card-stat">Remote • Hybrid • International</div>
+        </div>
+      </div>
+      <ul>
+        <li>Enterprise tech (Microsoft, EA, VMware)</li>
+        <li>Gaming industry (Blizzard, EA)</li>
+        <li>Public sector (EU Parliament)</li>
+        <li>Remote-first since 2022</li>
+        <li>Cross-timezone collaboration expertise</li>
+      </ul>
+    </div>
+
+    <!-- 11 Scale of Impact -->
+    <div class="dash-card c-purple fade-in" aria-label="Scale of Impact card">
+      <div class="dash-card-header">
+        <span class="dash-card-icon" aria-hidden="true"><span class="icon"><svg viewBox="0 0 24 24"><path d="M3 20h18M6 6l3-3 2 5 2-4 2 3 3-3M6 16l3-2 2 4 2-3 2 2 3-2"/></svg></span></span>
+        <div>
+          <div class="dash-card-title">Scale of Impact</div>
+          <div class="dash-card-stat">Millions of Users Supported</div>
+        </div>
+      </div>
+      <ul>
+        <li>30K+ YouTube subscribers (VMware KBTV)</li>
+        <li>3,000+ help articles governed (Microsoft)</li>
+        <li>70+ knowledge owners coordinated</li>
+        <li>10K+ ML annotations contributed</li>
+        <li>Enterprise global platform support</li>
+      </ul>
+    </div>
+
+    <!-- 12 Human Dimension -->
+    <div class="dash-card c-pink fade-in" aria-label="Human Dimension and Creative Interests card">
+      <div class="dash-card-header">
+        <span class="dash-card-icon" aria-hidden="true"><span class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="9" r="4"/><path d="M4 20c0-3.3 3.6-6 8-6s8 2.7 8 6"/><path d="M17 11l4 4M21 11l-4 4"/></svg></span></span>
+        <div>
+          <div class="dash-card-title">Human Dimension</div>
+          <div class="dash-card-stat">Creative & Community-Driven</div>
+        </div>
+      </div>
+      <ul>
+        <li>Macro photography enthusiast</li>
+        <li>Writer — KnowledgeManagement.ie blog</li>
+        <li>Mentor to aspiring tech leaders</li>
+        <li>Workshop facilitator & speaker</li>
+        <li>Community advocate for women in tech</li>
+      </ul>
     </div>
 
   </div>
@@ -1748,12 +1820,15 @@ body.adventure-mode .rune { display: inline; }
 
 function applyAdventure(on) {
   var btn = document.getElementById('theme-toggle');
+  var label = document.getElementById('mode-label');
   if (on) {
     document.body.classList.add('adventure-mode');
     btn && btn.setAttribute('aria-pressed', 'true');
+    label && (label.textContent = 'Nerd Mode');
   } else {
     document.body.classList.remove('adventure-mode');
     btn && btn.setAttribute('aria-pressed', 'false');
+    label && (label.textContent = 'Professional');
   }
   // Badge text
   var pro = document.querySelectorAll('.badge-text-pro');
@@ -1770,6 +1845,10 @@ function applyAdventure(on) {
 function toggleTheme() {
   var isAdv = document.body.classList.contains('adventure-mode');
   applyAdventure(!isAdv);
+  var label = document.getElementById('mode-label');
+  if (label) {
+    label.textContent = !isAdv ? 'Nerd Mode' : 'Professional';
+  }
   localStorage.setItem('mg-theme', !isAdv ? 'adventure' : 'professional');
 }
 
