@@ -87,7 +87,7 @@
         }
         .mode-toggle-container:hover {
             border-color: var(--accent-magenta);
-            box-shadow: 0 0 20px rgba(255, 0, 160, 0.3);
+            box-shadow: 0 0 12px rgba(255, 0, 160, 0.15);
         }
         .toggle-label {
             font-size: 0.9rem;
@@ -107,7 +107,7 @@
         .toggle-switch.active {
             background: linear-gradient(135deg, var(--accent-magenta), var(--accent-purple));
             border-color: var(--accent-magenta);
-            box-shadow: 0 0 20px rgba(255, 0, 160, 0.4);
+            box-shadow: 0 0 8px rgba(255, 0, 160, 0.2);
         }
         .toggle-slider {
             position: absolute;
@@ -128,7 +128,7 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            padding: 3.5rem 5% 3rem;
+            padding: 4rem 5% 3.5rem;
             position: relative;
             max-width: 1200px;
             margin: 0 auto;
@@ -228,22 +228,71 @@
             background: linear-gradient(135deg, var(--accent-magenta), var(--accent-purple));
             color: #fff;
             border: 1px solid var(--accent-magenta);
-            box-shadow: 0 0 20px rgba(255, 0, 160, 0.3);
+            box-shadow: 0 8px 16px rgba(255, 0, 160, 0.15);
         }
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 0 30px rgba(255, 0, 160, 0.5);
+            box-shadow: 0 12px 24px rgba(255, 0, 160, 0.2);
         }
         .btn-secondary {
             background: transparent;
             color: var(--accent-cyan);
             border: 2px solid var(--accent-cyan);
-            box-shadow: 0 0 15px rgba(0, 240, 255, 0.2);
+            box-shadow: none;
         }
         .btn-secondary:hover {
-            background: rgba(0, 240, 255, 0.1);
-            box-shadow: 0 0 25px rgba(0, 240, 255, 0.4);
+            background: rgba(0, 240, 255, 0.08);
+            box-shadow: 0 8px 16px rgba(0, 240, 255, 0.1);
             transform: translateY(-2px);
+        }
+        .executive-snapshot {
+            padding: 3.5rem 5%;
+            max-width: 1300px;
+            margin: 0 auto 3rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 1.5rem;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+        .snapshot-item {
+            text-align: center;
+            padding: 1.5rem 1rem;
+            background: rgba(18, 18, 26, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+        .snapshot-item:hover {
+            background: rgba(255, 0, 160, 0.05);
+            border-color: rgba(255, 0, 160, 0.15);
+            transform: translateY(-2px);
+        }
+        .snapshot-label {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        .snapshot-value {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--accent-magenta), var(--accent-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.75rem;
+        }
+        .snapshot-desc {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            line-height: 1.3;
         }
         .trusted-section {
             padding: 3rem 5%;
@@ -279,7 +328,7 @@
             transform: scale(1.1);
         }
         .content-section {
-            padding: 5rem 5%;
+            padding: 6rem 5%;
             max-width: 1000px;
             margin: 0 auto;
         }
@@ -297,7 +346,7 @@
         }
         .section-icon {
             font-size: 2rem;
-            filter: drop-shadow(0 0 10px rgba(0, 240, 255, 0.5));
+            filter: drop-shadow(0 0 3px rgba(0, 240, 255, 0.2));
         }
         .section-subtitle {
             color: var(--text-secondary);
@@ -311,7 +360,7 @@
             margin-top: 1rem;
             margin-left: 3rem;
             border-radius: 2px;
-            box-shadow: 0 0 20px var(--accent-magenta);
+            box-shadow: 0 0 8px rgba(255, 0, 160, 0.3);
         }
         .card {
             background: var(--card-bg);
@@ -470,7 +519,7 @@
             bottom: 0;
             width: 2px;
             background: linear-gradient(180deg, var(--accent-magenta), var(--accent-cyan));
-            box-shadow: 0 0 10px var(--accent-magenta);
+            box-shadow: 0 0 4px rgba(255, 0, 160, 0.2);
         }
         .timeline-item {
             position: relative;
@@ -792,21 +841,64 @@
         <p class="hero-title professional-only">Strategic Knowledge Systems Leader | Content Operations | AI Readiness</p>
         <p class="hero-title nerdy-only">Level 15+ Operations Mage | AI Systems Architecture</p>
 
-        <p class="hero-tagline professional-only">Turning organizational knowledge into content strategy and ROI with 100% energy.</p>
+        <p class="hero-tagline professional-only">Marcela leads global knowledge and content ecosystems that help millions of users find clarity fast. With 15+ years across Microsoft, EA, VMware, Blizzard, and EU institutions, she specializes in AI readiness, governance systems, and large-scale support transformation.</p>
         <p class="hero-tagline nerdy-only">Transforming chaotic realms into optimized kingdoms with legendary efficiency.</p>
 
-        <ul class="hero-highlights" aria-label="Current focus highlights">
-            <li class="professional-only">Leadership Opportunities</li>
-            <li class="professional-only">AI in Business</li>
-            <li class="professional-only">Practical Playbooks</li>
-            <li class="nerdy-only">Epic Quests</li>
-            <li class="nerdy-only">Magical Innovation</li>
-            <li class="nerdy-only">System Architecture</li>
-        </ul>
-
         <div class="hero-ctas">
-            <a href="#impact" class="btn btn-primary">Explore My Impact</a>
-            <a href="https://linkedin.com/in/marcela-gleixner-programmanager" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Connect on LinkedIn</a>
+            <a href="#impact" class="btn btn-primary">View Career Journey</a>
+            <a href="https://linkedin.com/in/marcela-gleixner-programmanager" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Connect Professionally</a>
+        </div>
+    </section>
+
+    <!-- EXECUTIVE SNAPSHOT STRIP -->
+    <section class="executive-snapshot">
+        <div class="snapshot-item">
+            <div class="snapshot-label">Experience</div>
+            <div class="snapshot-value">15+ Years</div>
+            <div class="snapshot-desc professional-only">Global technology & public sector leadership</div>
+            <div class="snapshot-desc nerdy-only">Epic campaigns across realms</div>
+        </div>
+        <div class="snapshot-item">
+            <div class="snapshot-label">Enterprise Scope</div>
+            <div class="snapshot-value">Global</div>
+            <div class="snapshot-desc professional-only">Multinational ecosystem programs</div>
+            <div class="snapshot-desc nerdy-only">Cross-realm operations</div>
+        </div>
+        <div class="snapshot-item">
+            <div class="snapshot-label">Specialization</div>
+            <div class="snapshot-value">AI Governance</div>
+            <div class="snapshot-desc professional-only">Knowledge systems & content operations</div>
+            <div class="snapshot-desc nerdy-only">Systems architecture & optimization</div>
+        </div>
+        <div class="snapshot-item">
+            <div class="snapshot-label">Sectors</div>
+            <div class="snapshot-value">Both</div>
+            <div class="snapshot-desc professional-only">Private sector & public institutions</div>
+            <div class="snapshot-desc nerdy-only">All kingdoms served</div>
+        </div>
+        <div class="snapshot-item">
+            <div class="snapshot-label">Languages</div>
+            <div class="snapshot-value">Bilingual</div>
+            <div class="snapshot-desc professional-only">English & Polish fluency</div>
+            <div class="snapshot-desc nerdy-only">Master of two tongues</div>
+        </div>
+        <div class="snapshot-item">
+            <div class="snapshot-label">Leadership</div>
+            <div class="snapshot-value">Distributed</div>
+            <div class="snapshot-desc professional-only">Remote & multinational teams</div>
+            <div class="snapshot-desc nerdy-only">Across the digital realm</div>
+        </div>
+        <div class="snapshot-item">
+            <div class="snapshot-label">Education</div>
+            <div class="snapshot-value">Advanced</div>
+            <div class="snapshot-desc professional-only">Master's degree + specializations</div>
+            <div class="snapshot-desc nerdy-only">Scholarly achievements</div>
+        </div>
+        <div class="snapshot-item">
+            <div class="snapshot-label">Credentials</div>
+            <div class="snapshot-value">Certified</div>
+            <div class="snapshot-desc professional-only">KCS v6, Analytics, AI Governance</div>
+            <div class="snapshot-desc nerdy-only">Official seals of mastery</div>
         </div>
     </section>
 
@@ -823,11 +915,11 @@
         </div>
     </div>
 
-    <!-- IMPACT METRICS -->
+    <!-- TRANSFORMATION OUTCOMES -->
     <section class="content-section" id="impact">
         <div class="section-header">
-            <h2><span class="section-icon professional-only">📊</span><span class="section-icon nerdy-only">🔮</span> <span class="professional-only">Impact Metrics</span><span class="nerdy-only">Legendary Stats</span></h2>
-            <div class="section-subtitle professional-only">Quantified outcomes across content operations & AI readiness</div>
+            <h2><span class="section-icon professional-only">📊</span><span class="section-icon nerdy-only">🔮</span> <span class="professional-only">Selected Transformation Outcomes</span><span class="nerdy-only">Legendary Stats</span></h2>
+            <div class="section-subtitle professional-only">Evidence of enterprise-scale impact in content operations & AI readiness</div>
             <div class="section-subtitle nerdy-only">Character attributes and achievements unlocked</div>
             <div class="glow-line"></div>
         </div>
