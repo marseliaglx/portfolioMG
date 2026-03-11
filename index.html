@@ -476,16 +476,20 @@
         }
         .dash-header {
             margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.08);
         }
         .dash-header h2 {
-            font-size: 1.6rem;
+            font-size: 1.8rem;
             color: var(--text-primary);
-            font-weight: 600;
-            margin-bottom: 0.25rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.5px;
         }
         .dash-header p {
-            font-size: 0.85rem;
-            color: var(--text-muted);
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            max-width: 600px;
         }
         /* Featured row: 2 large cards */
         .dash-featured {
@@ -560,35 +564,104 @@
         .dash-cta::after {
             content: ' →';
         }
-        /* Middle row: 3 medium cards */
+        /* === DASHBOARD CARD VARIANTS === */
+        .dash-card.career-accent {
+            border-left: 4px solid var(--accent-cyan);
+            background: linear-gradient(135deg, rgba(0, 240, 255, 0.04), transparent);
+        }
+        .dash-card.career-accent:hover {
+            background: linear-gradient(135deg, rgba(0, 240, 255, 0.08), transparent);
+            border-left-color: var(--accent-cyan);
+            box-shadow: 0 12px 32px rgba(0, 240, 255, 0.15);
+        }
+        .dash-card.impact-accent {
+            border-left: 4px solid var(--accent-magenta);
+            background: linear-gradient(135deg, rgba(255, 0, 160, 0.04), transparent);
+        }
+        .dash-card.impact-accent:hover {
+            background: linear-gradient(135deg, rgba(255, 0, 160, 0.08), transparent);
+            border-left-color: var(--accent-magenta);
+            box-shadow: 0 12px 32px rgba(255, 0, 160, 0.15);
+        }
+        .dash-card.specialization-accent {
+            border-top: 3px solid var(--accent-cyan);
+            border-left: none;
+        }
+        .dash-card.specialization-accent:hover {
+            border-top-color: var(--accent-cyan);
+        }
+        .dash-card.leadership-accent {
+            border-top: 3px solid var(--accent-magenta);
+            border-left: none;
+        }
+        .dash-card.leadership-accent:hover {
+            border-top-color: var(--accent-magenta);
+        }
+        .dash-card.credentials-accent {
+            border-top: 3px solid var(--accent-purple);
+            border-left: none;
+        }
+        .dash-card.credentials-accent:hover {
+            border-top-color: var(--accent-purple);
+        }
+        .dash-icon {
+            font-size: 2rem;
+            margin-bottom: 0.75rem;
+            display: block;
+        }
+        .dash-stat-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-magenta));
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.65rem;
+            font-weight: 700;
+            color: white;
+            margin-left: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .dash-trend {
+            font-size: 0.8rem;
+            margin-top: 0.75rem;
+            padding-top: 0.75rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            color: var(--accent-cyan);
+            font-weight: 600;
+        }
         .dash-middle {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
             gap: 1.5rem;
             margin-bottom: 1.5rem;
         }
-        /* Bottom compact strip */
+        /* Bottom compact strip - Dashboard footer */
         .dash-strip {
-            display: flex;
-            gap: 2.5rem;
-            padding: 1.25rem 2rem;
-            background: rgba(0, 240, 255, 0.03);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+            background: linear-gradient(90deg, rgba(0, 240, 255, 0.02) 0%, rgba(255, 0, 160, 0.02) 100%);
             border: 1px solid rgba(255, 255, 255, 0.08);
+            border-top: 2px solid rgba(255, 255, 255, 0.12);
             border-radius: 8px;
             flex-wrap: wrap;
         }
         .dash-strip-item {
             display: flex;
-            align-items: center;
-            gap: 0.6rem;
+            flex-direction: column;
+            gap: 0.5rem;
             font-size: 0.8rem;
             color: var(--text-secondary);
+            padding: 0.75rem 0;
+            border-left: 2px solid rgba(0, 240, 255, 0.2);
+            padding-left: 1rem;
         }
         .dash-strip-label {
-            font-weight: 600;
-            color: var(--text-muted);
-            font-size: 0.8rem;
-            letter-spacing: 1px;
+            font-weight: 700;
+            color: var(--accent-cyan);
+            font-size: 0.75rem;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
         }
         @media (max-width: 768px) {
@@ -1503,46 +1576,56 @@
 
             <!-- Row 1: Two featured cards -->
             <div class="dash-featured">
-                <div class="dash-card dash-card--featured" data-section="experience">
+                <div class="dash-card dash-card--featured career-accent" data-section="experience" style="cursor: pointer;">
+                    <div class="dash-icon">💼</div>
                     <div class="dash-label">Career Trajectory</div>
-                    <div class="dash-stat professional-only">5 Organizations, 15 Years</div>
-                    <div class="dash-stat nerdy-only">15 Years, 5 Legendary Realms</div>
-                    <div class="dash-sub professional-only">Microsoft &#8594; EA &#8594; VMware &#8594; Blizzard &#8594; EU Parliament</div>
-                    <div class="dash-sub nerdy-only">Microsoft &#8594; EA &#8594; VMware &#8594; Blizzard &#8594; EU Parliament</div>
-                    <button class="dash-cta">View career timeline</button>
+                    <div class="dash-stat professional-only">5 Organizations<span class="dash-stat-badge">15 YRS</span></div>
+                    <div class="dash-stat nerdy-only">5 Legendary Realms<span class="dash-stat-badge">15 EONS</span></div>
+                    <div class="dash-sub professional-only">Strategic progression: Microsoft → EA → VMware → Blizzard → EU Parliament</div>
+                    <div class="dash-sub nerdy-only">Sacred path: Microsoft → EA → VMware → Blizzard → EU Parliament</div>
+                    <div class="dash-trend">📈 Expanding leadership scope each role</div>
+                    <button class="dash-cta">View timeline →</button>
                 </div>
-                <div class="dash-card dash-card--featured" data-section="impact">
+                <div class="dash-card dash-card--featured impact-accent" data-section="impact" style="cursor: pointer;">
+                    <div class="dash-icon">⚡</div>
                     <div class="dash-label">Impact at Scale</div>
-                    <div class="dash-stat">100M+ Users Reached</div>
-                    <div class="dash-sub professional-only">Enterprise content ecosystems serving global audiences across Microsoft 365, VMware, and EA platforms</div>
-                    <div class="dash-sub nerdy-only">Kingdoms touched by optimized knowledge systems across massive digital realms</div>
-                    <button class="dash-cta">See transformation outcomes</button>
+                    <div class="dash-stat">100M+<span class="dash-stat-badge">USERS</span></div>
+                    <div class="dash-sub professional-only">Enterprise content ecosystems. Global audience reach across Microsoft 365, VMware, EA. Measurable platform impact.</div>
+                    <div class="dash-sub nerdy-only">Knowledge systems touching millions. Optimization across digital realms. Proven at massive scale.</div>
+                    <div class="dash-trend">🎯 From 67% → 94% AI readiness</div>
+                    <button class="dash-cta">View outcomes →</button>
                 </div>
             </div>
 
-            <!-- Row 2: Three medium cards -->
+            <!-- Row 2: Three medium cards - Color-coded by domain -->
             <div class="dash-middle">
-                <div class="dash-card" data-section="skills">
-                    <div class="dash-label">Specialization</div>
-                    <div class="dash-stat professional-only">AI &times; Knowledge Systems</div>
-                    <div class="dash-stat nerdy-only">AI &times; System Architecture</div>
-                    <div class="dash-sub professional-only">LLM readiness, content governance, service operations</div>
-                    <div class="dash-sub nerdy-only">Intelligent systems, magical governance, realm optimization</div>
-                    <button class="dash-cta">Explore expertise</button>
+                <div class="dash-card specialization-accent" data-section="skills" style="cursor: pointer;">
+                    <div class="dash-icon">🤖</div>
+                    <div class="dash-label">Core Specialization</div>
+                    <div class="dash-stat professional-only">AI × Knowledge<span class="dash-stat-badge">EXPERT</span></div>
+                    <div class="dash-stat nerdy-only">AI × Systems<span class="dash-stat-badge">MASTER</span></div>
+                    <div class="dash-sub professional-only">LLM readiness • Content governance • Service operations • Knowledge architecture</div>
+                    <div class="dash-sub nerdy-only">Intelligent systems • Magical governance • Realm optimization • Rune mastery</div>
+                    <div class="dash-trend">✓ 4 skill categories, 20+ tools</div>
+                    <button class="dash-cta">Explore skills →</button>
                 </div>
-                <div class="dash-card" data-section="experience">
+                <div class="dash-card leadership-accent" data-section="experience" style="cursor: pointer;">
+                    <div class="dash-icon">👥</div>
                     <div class="dash-label">Leadership Scope</div>
-                    <div class="dash-stat">70+ Stakeholders</div>
-                    <div class="dash-sub professional-only">Cross-functional programs across distributed global teams and vendor partners</div>
-                    <div class="dash-sub nerdy-only">Allied forces coordinated across multiple territories and guilds</div>
-                    <button class="dash-cta">View experience</button>
+                    <div class="dash-stat">70+<span class="dash-stat-badge">STAKEHOLDERS</span></div>
+                    <div class="dash-sub professional-only">Cross-functional alignment • Global distributed teams • Vendor partnerships • Multi-timezone coordination</div>
+                    <div class="dash-sub nerdy-only">Allied forces coordination • Multi-realm alliances • Vendor treaties • Cross-timezone mastery</div>
+                    <div class="dash-trend">🎯 Principal-level reporting</div>
+                    <button class="dash-cta">View experience →</button>
                 </div>
-                <div class="dash-card" data-section="education">
-                    <div class="dash-label">Credentials</div>
-                    <div class="dash-stat">Master's + 7 Certs</div>
-                    <div class="dash-sub professional-only">Master's + 2 KCS · Business Analytics · Digital Marketing · Service Design & 4 more</div>
-                    <div class="dash-sub nerdy-only">Master's degree plus 8 official seals of mastery across critical disciplines</div>
-                    <button class="dash-cta">View credentials</button>
+                <div class="dash-card credentials-accent" data-section="education" style="cursor: pointer;">
+                    <div class="dash-icon">🎓</div>
+                    <div class="dash-label">Credentials & Learning</div>
+                    <div class="dash-stat">Master's<span class="dash-stat-badge">+9</span></div>
+                    <div class="dash-sub professional-only">Master's degree • KCS v6 + KCS Basic • Harvard Analytics • Service Design • Digital Marketing • + 4 more</div>
+                    <div class="dash-sub nerdy-only">Master's seal • 8 official mastery seals • Harvard scrolls • Digital Arts • Service Design mastery + 4</div>
+                    <div class="dash-trend">📚 Continuous learning in progress</div>
+                    <button class="dash-cta">View credentials →</button>
                 </div>
             </div>
 
