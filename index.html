@@ -204,6 +204,56 @@
             border-color: var(--accent-magenta);
             box-shadow: 0 0 15px rgba(255, 0, 160, 0.3);
         }
+        .problems-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin: 2.5rem 0 2rem;
+            max-width: 900px;
+        }
+        .problem-card {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-left: 3px solid var(--accent-cyan);
+            border-radius: 6px;
+            padding: 1.75rem;
+            position: relative;
+            transition: all 0.15s ease;
+        }
+        .problem-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-left-color: var(--accent-magenta);
+        }
+        .problem-number {
+            position: absolute;
+            top: -12px;
+            left: 1.75rem;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--accent-cyan);
+            opacity: 0.3;
+        }
+        .problem-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+            margin-top: 0.5rem;
+        }
+        .problem-proof {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+        @media (max-width: 768px) {
+            .problems-grid {
+                grid-template-columns: 1fr;
+                margin: 2rem 0 1.5rem;
+            }
+            .problem-card {
+                padding: 1.5rem;
+            }
+        }
         .hero-ctas {
             display: flex;
             gap: 1rem;
@@ -1006,6 +1056,15 @@
             color: var(--accent-cyan);
             font-size: 0.9rem;
         }
+        .edu-section-header {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 2rem 0 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border-color);
+        }
         .edu-item {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
@@ -1201,15 +1260,51 @@
 
         <h1>Marcela Gleixner</h1>
 
-        <p class="hero-title professional-only">Strategic Knowledge Systems Leader | Content Operations | AI Readiness</p>
-        <p class="hero-title nerdy-only">Level 15+ Operations Mage | AI Systems Architecture</p>
+        <p class="hero-title professional-only">I Solve Three Critical Business Problems</p>
+        <p class="hero-title nerdy-only">Master of Three Legendary Domains</p>
 
-        <p class="hero-tagline professional-only">Marcela leads global knowledge and content ecosystems that help millions of users find clarity fast. With 15+ years across Microsoft, EA, VMware, Blizzard, and EU institutions, she specializes in AI readiness, governance systems, and large-scale support transformation.</p>
-        <p class="hero-tagline nerdy-only">Transforming chaotic realms into optimized kingdoms with legendary efficiency.</p>
+        <div class="problems-grid professional-only">
+            <div class="problem-card">
+                <div class="problem-number">1</div>
+                <div class="problem-title">Reduce Support Costs</div>
+                <div class="problem-proof">Built $0-budget programs that deflect 10%+ of support contacts via self-service & YouTube</div>
+            </div>
+            <div class="problem-card">
+                <div class="problem-number">2</div>
+                <div class="problem-title">AI-Ready Enterprise Knowledge</div>
+                <div class="problem-proof">Achieved 67→94% AI readiness for Copilot at Microsoft; 100M+ users now get better answers</div>
+            </div>
+            <div class="problem-card">
+                <div class="problem-number">3</div>
+                <div class="problem-title">Scale Knowledge Operations</div>
+                <div class="problem-proof">Lead 70+ stakeholders across multinational teams; transform chaos into systems that serve millions</div>
+            </div>
+        </div>
+
+        <div class="problems-grid nerdy-only">
+            <div class="problem-card">
+                <div class="problem-number">1</div>
+                <div class="problem-title">Quest Efficiency</div>
+                <div class="problem-proof">Zero-budget deflection programs serving millions through strategic scrolls</div>
+            </div>
+            <div class="problem-card">
+                <div class="problem-number">2</div>
+                <div class="problem-title">AI Prophecy & Integration</div>
+                <div class="problem-proof">Prepared vast knowledge realms for magical tools; 100M+ citizens receive better wisdom</div>
+            </div>
+            <div class="problem-card">
+                <div class="problem-number">3</div>
+                <div class="problem-title">Cross-Realm Mastery</div>
+                <div class="problem-proof">Command 70+ stakeholders; transform scattered knowledge into optimized kingdoms</div>
+            </div>
+        </div>
+
+        <p class="hero-tagline professional-only">Proven across Microsoft, VMware, EA, Blizzard, and EU Parliament. 15+ years. 2 Master's degrees. 9 professional credentials including KCS v6 Practitioner.</p>
+        <p class="hero-tagline nerdy-only">Legendary campaigns across Fortune 500 empires and governing halls. Master of knowledge systems and AI transformation.</p>
 
         <div class="hero-ctas">
-            <a href="#impact" class="btn btn-primary">View Career Journey</a>
-            <a href="https://linkedin.com/in/marcela-gleixner-programmanager" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Connect Professionally</a>
+            <a href="#impact" class="btn btn-primary">See Proof</a>
+            <a href="https://linkedin.com/in/marcela-gleixner-programmanager" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Connect on LinkedIn</a>
         </div>
     </section>
 
@@ -1248,8 +1343,8 @@
                 <a href="#education" class="nav-item">
                     <div class="nav-icon">🎓</div>
                     <div class="nav-title">Education</div>
-                    <div class="nav-desc professional-only">Master's + 7 credentials</div>
-                    <div class="nav-desc nerdy-only">Official seals of mastery</div>
+                    <div class="nav-desc professional-only">Master's + 2 KCS + 6 others</div>
+                    <div class="nav-desc nerdy-only">9 official seals of mastery</div>
                 </a>
                 <a href="#skills" class="nav-item">
                     <div class="nav-icon">🎯</div>
@@ -1318,8 +1413,8 @@
                 <div class="dash-card" data-section="education">
                     <div class="dash-label">Credentials</div>
                     <div class="dash-stat">Master's + 7 Certs</div>
-                    <div class="dash-sub professional-only">KCS v6 &middot; Business Analytics &middot; AI Governance &middot; Google Analytics &middot; +3</div>
-                    <div class="dash-sub nerdy-only">Advanced scrolls &middot; 7 official seals of mastery earned across disciplines</div>
+                    <div class="dash-sub professional-only">Master's + 2 KCS · Business Analytics · Digital Marketing · Service Design & 4 more</div>
+                    <div class="dash-sub nerdy-only">Master's degree plus 8 official seals of mastery across critical disciplines</div>
                     <button class="dash-cta">View credentials</button>
                 </div>
             </div>
@@ -1642,11 +1737,29 @@
     <section class="content-section" id="education">
         <div class="section-header">
             <h2><span class="section-icon">🎓</span> <span class="professional-only">Education & Credentials</span><span class="nerdy-only">Academy Training & Certifications</span></h2>
-            <div class="section-subtitle professional-only">Formal credentials & continuous upskilling</div>
-            <div class="section-subtitle nerdy-only">Completed training modules and skill trees</div>
+            <div class="section-subtitle professional-only">Master's degree + 9 professional credentials</div>
+            <div class="section-subtitle nerdy-only">Advanced degrees and official seals of mastery</div>
             <div class="glow-line"></div>
         </div>
 
+        <div class="edu-section-header professional-only"><strong>Professional Certifications</strong></div>
+        <div class="edu-item">
+            <div>
+                <div class="edu-title">KCS v6 Practitioner</div>
+                <div class="edu-school">Knowledge Centered Service</div>
+                <div class="edu-desc">Professional certification in Knowledge Centered Service best practices, methodologies, and implementation strategies for enterprise knowledge management.</div>
+            </div>
+        </div>
+
+        <div class="edu-item">
+            <div>
+                <div class="edu-title">KCS Certification (Basic)</div>
+                <div class="edu-school">Knowledge Centered Service</div>
+                <div class="edu-desc">Foundation certification in Knowledge Centered Service principles and practices for knowledge-driven organizations.</div>
+            </div>
+        </div>
+
+        <div class="edu-section-header professional-only"><strong>Continuous Learning & Advanced Training</strong></div>
         <div class="edu-item">
             <div>
                 <div class="edu-title">AI for Business — Master's Module • In Progress</div>
