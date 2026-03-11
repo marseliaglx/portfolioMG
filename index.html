@@ -245,110 +245,137 @@
             box-shadow: 0 8px 16px rgba(0, 240, 255, 0.1);
             transform: translateY(-2px);
         }
-        .executive-snapshot {
-            padding: 4rem 5%;
-            background: linear-gradient(180deg, rgba(18, 18, 26, 0.8) 0%, var(--bg-primary) 100%);
+        /* --- EXECUTIVE DASHBOARD --- */
+        .executive-dashboard {
+            padding: 4.5rem 5%;
+            background: var(--bg-secondary);
             border-top: 1px solid var(--border-color);
             border-bottom: 1px solid var(--border-color);
         }
-        .dashboard-container {
-            max-width: 1400px;
+        .dash-container {
+            max-width: 1200px;
             margin: 0 auto;
         }
-        .dashboard-header-section {
-            text-align: center;
-            margin-bottom: 3.5rem;
+        .dash-header {
+            margin-bottom: 3rem;
         }
-        .dashboard-header-section h2 {
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
+        .dash-header h2 {
+            font-size: 1.6rem;
             color: var(--text-primary);
-            font-weight: 700;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
         }
-        .dashboard-instruction {
-            font-size: 0.95rem;
-            color: var(--text-secondary);
-            margin: 0;
+        .dash-header p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
         }
-        .dashboard-grid {
+        /* Featured row: 2 large cards */
+        .dash-featured {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            max-width: 1400px;
-        }
-        .dashboard-card {
-            display: flex;
-            flex-direction: column;
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 8px;
-            padding: 2rem;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        .dashboard-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background: transparent;
-            transition: background 0.2s ease;
-        }
-        .dashboard-card:hover {
-            background: rgba(255, 255, 255, 0.04);
-            border-color: rgba(255, 255, 255, 0.12);
-            transform: translateY(-2px);
-        }
-        .dashboard-card:hover::before {
-            background: var(--accent-cyan);
-        }
-        .card-header {
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
             margin-bottom: 1.5rem;
         }
-        .card-label {
-            font-size: 0.7rem;
-            letter-spacing: 1.5px;
+        .dash-card {
+            display: flex;
+            flex-direction: column;
+            background: rgba(255, 255, 255, 0.025);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-left: 3px solid rgba(255, 255, 255, 0.06);
+            border-radius: 4px;
+            padding: 2rem 2rem 1.5rem;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+        .dash-card:hover {
+            background: rgba(255, 255, 255, 0.04);
+            border-left-color: var(--accent-cyan);
+        }
+        .dash-card:hover .dash-cta {
+            color: var(--accent-cyan);
+        }
+        .dash-card--featured {
+            padding: 2.5rem 2.5rem 2rem;
+        }
+        .dash-label {
+            font-size: 0.65rem;
+            letter-spacing: 2px;
             text-transform: uppercase;
             font-weight: 700;
             color: var(--text-muted);
+            margin-bottom: 1rem;
         }
-        .card-content {
-            flex: 1;
-            margin-bottom: 1.5rem;
-        }
-        .card-stat {
-            font-size: 1.8rem;
+        .dash-stat {
+            font-size: 2rem;
             font-weight: 700;
             color: var(--text-primary);
-            margin-bottom: 0.8rem;
             font-family: 'Space Grotesk', sans-serif;
+            line-height: 1.2;
+            margin-bottom: 0.6rem;
         }
-        .card-detail {
+        .dash-card--featured .dash-stat {
+            font-size: 2.4rem;
+        }
+        .dash-sub {
             font-size: 0.85rem;
             line-height: 1.5;
             color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            flex: 1;
         }
-        .card-cta {
-            align-self: flex-start;
-            padding: 0.5rem 1rem;
-            background: transparent;
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            color: var(--text-secondary);
+        .dash-cta {
             font-size: 0.8rem;
             font-weight: 600;
-            border-radius: 4px;
+            color: var(--text-muted);
+            transition: color 0.15s ease;
+            background: none;
+            border: none;
+            padding: 0;
             cursor: pointer;
-            transition: all 0.2s ease;
+            text-align: left;
             font-family: inherit;
         }
-        .card-cta:hover {
-            background: rgba(255, 255, 255, 0.06);
-            border-color: rgba(255, 255, 255, 0.25);
-            color: var(--text-primary);
+        .dash-cta::after {
+            content: ' →';
+        }
+        /* Middle row: 3 medium cards */
+        .dash-middle {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        /* Bottom compact strip */
+        .dash-strip {
+            display: flex;
+            gap: 2.5rem;
+            padding: 1.25rem 2rem;
+            background: rgba(255, 255, 255, 0.015);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            border-radius: 4px;
+        }
+        .dash-strip-item {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+        .dash-strip-label {
+            font-weight: 600;
+            color: var(--text-muted);
+            font-size: 0.7rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        @media (max-width: 768px) {
+            .dash-featured, .dash-middle {
+                grid-template-columns: 1fr;
+            }
+            .dash-strip {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
         }
         .trusted-section {
             padding: 3rem 5%;
@@ -1111,119 +1138,88 @@
         </div>
     </section>
 
-    <!-- EXECUTIVE SNAPSHOT DASHBOARD -->
-    <section class="executive-snapshot" id="executive-dashboard">
-        <div class="dashboard-container">
-            <div class="dashboard-header-section">
-                <h2 class="professional-only">360° Professional Overview</h2>
-                <h2 class="nerdy-only">Character Profile</h2>
-                <p class="dashboard-instruction professional-only">Navigate to areas of interest</p>
-                <p class="dashboard-instruction nerdy-only">Explore any realm</p>
+    <!-- EXECUTIVE DASHBOARD -->
+    <section class="executive-dashboard" id="executive-dashboard">
+        <div class="dash-container">
+            <div class="dash-header">
+                <h2 class="professional-only">At a Glance</h2>
+                <h2 class="nerdy-only">Character Stats</h2>
+                <p class="professional-only">Select any area to explore further</p>
+                <p class="nerdy-only">Click to investigate any stat</p>
             </div>
 
-            <div class="dashboard-grid">
-                <!-- Experience Card -->
-                <div class="dashboard-card" data-section="experience">
-                    <div class="card-header">
-                        <span class="card-label">EXPERIENCE</span>
-                    </div>
-                    <div class="card-content">
-                        <div class="card-stat">15+ Years</div>
-                        <div class="card-detail professional-only">Global technology & public sector leadership</div>
-                        <div class="card-detail nerdy-only">Epic campaigns across realms</div>
-                    </div>
-                    <button class="card-cta">View Details</button>
+            <!-- Row 1: Two featured cards -->
+            <div class="dash-featured">
+                <div class="dash-card dash-card--featured" data-section="experience">
+                    <div class="dash-label">Career Trajectory</div>
+                    <div class="dash-stat professional-only">5 Organizations, 15 Years</div>
+                    <div class="dash-stat nerdy-only">15 Years, 5 Legendary Realms</div>
+                    <div class="dash-sub professional-only">Microsoft &#8594; EA &#8594; VMware &#8594; Blizzard &#8594; EU Parliament</div>
+                    <div class="dash-sub nerdy-only">Microsoft &#8594; EA &#8594; VMware &#8594; Blizzard &#8594; EU Parliament</div>
+                    <button class="dash-cta">View career timeline</button>
                 </div>
-
-                <!-- Enterprise Scope Card -->
-                <div class="dashboard-card" data-section="enterprise">
-                    <div class="card-header">
-                        <span class="card-label">SCOPE</span>
-                    </div>
-                    <div class="card-content">
-                        <div class="card-stat">Global</div>
-                        <div class="card-detail professional-only">Multinational programs, 70+ teams</div>
-                        <div class="card-detail nerdy-only">Cross-realm operations</div>
-                    </div>
-                    <button class="card-cta">View Details</button>
+                <div class="dash-card dash-card--featured" data-section="impact">
+                    <div class="dash-label">Impact at Scale</div>
+                    <div class="dash-stat">100M+ Users Reached</div>
+                    <div class="dash-sub professional-only">Enterprise content ecosystems serving global audiences across Microsoft 365, VMware, and EA platforms</div>
+                    <div class="dash-sub nerdy-only">Kingdoms touched by optimized knowledge systems across massive digital realms</div>
+                    <button class="dash-cta">See transformation outcomes</button>
                 </div>
+            </div>
 
-                <!-- Specialization Card -->
-                <div class="dashboard-card" data-section="skills">
-                    <div class="card-header">
-                        <span class="card-label">SPECIALIZATION</span>
-                    </div>
-                    <div class="card-content">
-                        <div class="card-stat">AI Governance</div>
-                        <div class="card-detail professional-only">Knowledge systems & content architecture</div>
-                        <div class="card-detail nerdy-only">Systems architecture & optimization</div>
-                    </div>
-                    <button class="card-cta">View Details</button>
+            <!-- Row 2: Three medium cards -->
+            <div class="dash-middle">
+                <div class="dash-card" data-section="skills">
+                    <div class="dash-label">Specialization</div>
+                    <div class="dash-stat professional-only">AI &times; Knowledge Systems</div>
+                    <div class="dash-stat nerdy-only">AI &times; System Architecture</div>
+                    <div class="dash-sub professional-only">LLM readiness, content governance, service operations</div>
+                    <div class="dash-sub nerdy-only">Intelligent systems, magical governance, realm optimization</div>
+                    <button class="dash-cta">Explore expertise</button>
                 </div>
-
-                <!-- Sectors Card -->
-                <div class="dashboard-card" data-section="sectors">
-                    <div class="card-header">
-                        <span class="card-label">SECTORS</span>
-                    </div>
-                    <div class="card-content">
-                        <div class="card-stat">Both</div>
-                        <div class="card-detail professional-only">Private tech & government institutions</div>
-                        <div class="card-detail nerdy-only">All kingdoms served</div>
-                    </div>
-                    <button class="card-cta">View Details</button>
+                <div class="dash-card" data-section="experience">
+                    <div class="dash-label">Leadership Scope</div>
+                    <div class="dash-stat">70+ Stakeholders</div>
+                    <div class="dash-sub professional-only">Cross-functional programs across distributed global teams and vendor partners</div>
+                    <div class="dash-sub nerdy-only">Allied forces coordinated across multiple territories and guilds</div>
+                    <button class="dash-cta">View experience</button>
                 </div>
-
-                <!-- Languages Card -->
-                <div class="dashboard-card" data-section="languages">
-                    <div class="card-header">
-                        <span class="card-label">LANGUAGES</span>
-                    </div>
-                    <div class="card-content">
-                        <div class="card-stat">Bilingual</div>
-                        <div class="card-detail professional-only">English & Polish fluency</div>
-                        <div class="card-detail nerdy-only">Master of two tongues</div>
-                    </div>
-                    <button class="card-cta">View Details</button>
+                <div class="dash-card" data-section="education">
+                    <div class="dash-label">Credentials</div>
+                    <div class="dash-stat">Master's + 7 Certs</div>
+                    <div class="dash-sub professional-only">KCS v6 &middot; Business Analytics &middot; AI Governance &middot; Google Analytics &middot; +3</div>
+                    <div class="dash-sub nerdy-only">Advanced scrolls &middot; 7 official seals of mastery earned across disciplines</div>
+                    <button class="dash-cta">View credentials</button>
                 </div>
+            </div>
 
-                <!-- Leadership Card -->
-                <div class="dashboard-card" data-section="leadership">
-                    <div class="card-header">
-                        <span class="card-label">LEADERSHIP</span>
-                    </div>
-                    <div class="card-content">
-                        <div class="card-stat">Distributed</div>
-                        <div class="card-detail professional-only">Remote & multinational team management</div>
-                        <div class="card-detail nerdy-only">Across the digital realm</div>
-                    </div>
-                    <button class="card-cta">View Details</button>
+            <!-- Row 3: Compact metadata strip -->
+            <div class="dash-strip professional-only">
+                <div class="dash-strip-item">
+                    <span class="dash-strip-label">Sectors</span>
+                    Private & Public — Tech giants to EU Parliament
                 </div>
-
-                <!-- Education Card -->
-                <div class="dashboard-card" data-section="education">
-                    <div class="card-header">
-                        <span class="card-label">EDUCATION</span>
-                    </div>
-                    <div class="card-content">
-                        <div class="card-stat">Master's Degree</div>
-                        <div class="card-detail professional-only">Advanced studies + specializations</div>
-                        <div class="card-detail nerdy-only">Scholarly achievements</div>
-                    </div>
-                    <button class="card-cta">Explore</button>
+                <div class="dash-strip-item">
+                    <span class="dash-strip-label">Operations</span>
+                    Global & Remote — Multinational distributed teams
                 </div>
-
-                <!-- Certifications Card -->
-                <div class="dashboard-card" data-section="credentials">
-                    <div class="card-header">
-                        <span class="card-label">CERTIFICATIONS</span>
-                    </div>
-                    <div class="card-content">
-                        <div class="card-stat">7 Credentials</div>
-                        <div class="card-detail professional-only">KCS v6, Analytics, AI Governance, +4</div>
-                        <div class="card-detail nerdy-only">Official seals of mastery</div>
-                    </div>
-                    <button class="card-cta">View All</button>
+                <div class="dash-strip-item">
+                    <span class="dash-strip-label">Languages</span>
+                    English & Polish — Full professional fluency
+                </div>
+            </div>
+            <div class="dash-strip nerdy-only">
+                <div class="dash-strip-item">
+                    <span class="dash-strip-label">Realms</span>
+                    All kingdoms — Tech empires to governing halls
+                </div>
+                <div class="dash-strip-item">
+                    <span class="dash-strip-label">Range</span>
+                    Global & Remote — Cross-realm coordination
+                </div>
+                <div class="dash-strip-item">
+                    <span class="dash-strip-label">Tongues</span>
+                    English & Polish — Bilingual mastery
                 </div>
             </div>
         </div>
@@ -1772,20 +1768,12 @@
                 toggle.classList.add('active');
             }
 
-            // Dashboard Navigation Functionality
-            const dashboardCards = document.querySelectorAll('.dashboard-card');
-
-            dashboardCards.forEach(card => {
+            // Dashboard Navigation
+            document.querySelectorAll('.dash-card').forEach(function(card) {
                 card.addEventListener('click', function() {
-                    const section = this.getAttribute('data-section');
-                    const targetSection = document.getElementById(section);
-
-                    if (targetSection) {
-                        // Smooth scroll to section
-                        targetSection.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
+                    var target = document.getElementById(this.getAttribute('data-section'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     }
                 });
             });
