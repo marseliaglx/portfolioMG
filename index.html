@@ -245,6 +245,81 @@
             box-shadow: 0 8px 16px rgba(0, 240, 255, 0.1);
             transform: translateY(-2px);
         }
+        /* --- QUICK NAVIGATION --- */
+        .quick-nav {
+            padding: 3rem 5%;
+            background: rgba(255, 255, 255, 0.01);
+            border-bottom: 1px solid var(--border-color);
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .nav-label {
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+        .nav-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+        }
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 1.5rem 1rem;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 6px;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.15s ease;
+            cursor: pointer;
+        }
+        .nav-item:hover {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(255, 255, 255, 0.12);
+            transform: translateY(-2px);
+        }
+        .nav-icon {
+            font-size: 2rem;
+            margin-bottom: 0.6rem;
+        }
+        .nav-title {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.3rem;
+        }
+        .nav-desc {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            line-height: 1.3;
+        }
+        @media (max-width: 768px) {
+            .nav-grid {
+                grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            }
+            .nav-item {
+                padding: 1rem 0.75rem;
+            }
+            .nav-icon {
+                font-size: 1.5rem;
+                margin-bottom: 0.4rem;
+            }
+            .nav-title {
+                font-size: 0.85rem;
+            }
+            .nav-desc {
+                font-size: 0.7rem;
+            }
+        }
         /* --- EXECUTIVE DASHBOARD --- */
         .executive-dashboard {
             padding: 4.5rem 5%;
@@ -1138,6 +1213,62 @@
         </div>
     </section>
 
+    <!-- QUICK NAVIGATION -->
+    <section class="quick-nav">
+        <div class="nav-container">
+            <div class="nav-label professional-only">Everything on This Page</div>
+            <div class="nav-label nerdy-only">Available Realms to Explore</div>
+            <div class="nav-grid">
+                <a href="#about" class="nav-item">
+                    <div class="nav-icon">👤</div>
+                    <div class="nav-title">About Me</div>
+                    <div class="nav-desc professional-only">Strategic focus & background</div>
+                    <div class="nav-desc nerdy-only">Your realm guide</div>
+                </a>
+                <a href="#impact" class="nav-item">
+                    <div class="nav-icon">📊</div>
+                    <div class="nav-title professional-only">Outcomes</div>
+                    <div class="nav-title nerdy-only">Achievements</div>
+                    <div class="nav-desc professional-only">Real transformation results</div>
+                    <div class="nav-desc nerdy-only">Legendary stats</div>
+                </a>
+                <a href="#experience" class="nav-item">
+                    <div class="nav-icon">💼</div>
+                    <div class="nav-title professional-only">Experience</div>
+                    <div class="nav-title nerdy-only">Quest History</div>
+                    <div class="nav-desc professional-only">15+ years across 5 orgs</div>
+                    <div class="nav-desc nerdy-only">Epic campaigns</div>
+                </a>
+                <a href="#testimonials" class="nav-item">
+                    <div class="nav-icon">💬</div>
+                    <div class="nav-title">Testimonials</div>
+                    <div class="nav-desc professional-only">What leaders say</div>
+                    <div class="nav-desc nerdy-only">Scrolls of praise</div>
+                </a>
+                <a href="#education" class="nav-item">
+                    <div class="nav-icon">🎓</div>
+                    <div class="nav-title">Education</div>
+                    <div class="nav-desc professional-only">Master's + 7 credentials</div>
+                    <div class="nav-desc nerdy-only">Official seals of mastery</div>
+                </a>
+                <a href="#skills" class="nav-item">
+                    <div class="nav-icon">🎯</div>
+                    <div class="nav-title professional-only">Skills</div>
+                    <div class="nav-title nerdy-only">Abilities</div>
+                    <div class="nav-desc professional-only">Core competencies</div>
+                    <div class="nav-desc nerdy-only">Skill tree</div>
+                </a>
+                <a href="#hobbies" class="nav-item">
+                    <div class="nav-icon">✦</div>
+                    <div class="nav-title professional-only">Interests</div>
+                    <div class="nav-title nerdy-only">Side Quests</div>
+                    <div class="nav-desc professional-only">Beyond work</div>
+                    <div class="nav-desc nerdy-only">Leisure pursuits</div>
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- EXECUTIVE DASHBOARD -->
     <section class="executive-dashboard" id="executive-dashboard">
         <div class="dash-container">
@@ -1225,97 +1356,30 @@
         </div>
     </section>
 
-    <!-- STRATEGIC FOCUS -->
+    <!-- ABOUT ME -->
     <section class="content-section strategic-focus" id="about">
         <div class="focus-container">
-            <p class="focus-intro professional-only"><strong>I design the invisible systems that help millions of people find answers instantly.</strong></p>
-            <p class="focus-intro nerdy-only"><strong>I architect the hidden systems that turn chaos into clarity across digital realms.</strong></p>
-
-            <p class="focus-text professional-only">For over 15 years in global technology organizations like Microsoft, VMware, Electronic Arts, and Blizzard Entertainment, I've built scalable content ecosystems, knowledge frameworks, and AI-ready information architectures that reduce support costs, improve customer satisfaction, and turn chaos into clarity.</p>
-            <p class="focus-text nerdy-only">For 15+ years across legendary organizations, I've built the knowledge systems, content architectures, and information frameworks that transform scattered chaos into optimized, intelligent ecosystems.</p>
-
-            <p class="focus-problem professional-only"><em>Most organizations don't struggle with lack of content. They struggle with content that doesn't work.</em> That's where I come in.</p>
-            <p class="focus-problem nerdy-only"><em>Most realms don't lack information. They lack information that works.</em> I fix that.</p>
+            <p class="focus-intro professional-only">I design systems that help millions of users find answers instantly. I transform scattered information into AI-ready knowledge ecosystems that reduce support costs, improve satisfaction, and scale across enterprises.</p>
+            <p class="focus-intro nerdy-only">I architect hidden systems that turn chaos into clarity across digital realms. I build knowledge ecosystems and AI-ready information architectures for global organizations.</p>
 
             <div class="focus-intersection professional-only">
-                <p class="intersection-label">I sit at the intersection of:</p>
+                <p class="intersection-label">Core Focus Areas</p>
                 <div class="intersection-items">
                     <span>Content Strategy</span>
-                    <span>Knowledge Management</span>
-                    <span>Service Operations</span>
                     <span>AI Readiness</span>
+                    <span>Knowledge Architecture</span>
                     <span>Program Leadership</span>
                 </div>
-                <p>I build the processes, governance models, workflows, and analytics systems that make content perform — for users, for support teams, and for the business.</p>
             </div>
 
             <div class="focus-intersection nerdy-only">
-                <p class="intersection-label">My specializations:</p>
+                <p class="intersection-label">Specializations</p>
                 <div class="intersection-items">
                     <span>Knowledge Architecture</span>
-                    <span>Systems Optimization</span>
-                    <span>Ecosystem Engineering</span>
                     <span>AI Integration</span>
+                    <span>Systems Optimization</span>
                     <span>Quest Leadership</span>
                 </div>
-            </div>
-
-            <div class="business-value professional-only">
-                <p class="business-label"><strong>What I Actually Do (In Business Terms)</strong></p>
-                <ul class="business-list">
-                    <li>✓ Reduce customer support costs through smarter self-service ecosystems</li>
-                    <li>✓ Prepare knowledge bases for AI tools like Copilot and LLM-powered assistants</li>
-                    <li>✓ Lead complex cross-functional programs across global teams</li>
-                    <li>✓ Transform scattered information into structured, scalable systems</li>
-                    <li>✓ Connect content quality to measurable business outcomes</li>
-                </ul>
-            </div>
-
-            <div class="business-value nerdy-only">
-                <p class="business-label"><strong>My Core Abilities</strong></p>
-                <ul class="business-list">
-                    <li>✓ Transform chaos into optimized, intelligent systems</li>
-                    <li>✓ Master complex cross-realm operations</li>
-                    <li>✓ Engineer AI-ready knowledge architectures</li>
-                    <li>✓ Scale initiatives from zero budget to global impact</li>
-                    <li>✓ Connect operations to strategic outcomes</li>
-                </ul>
-            </div>
-
-            <div class="ai-focus professional-only">
-                <p class="ai-label"><strong>🤖 AI & Innovation Focus</strong></p>
-                <p>I don't just "use AI tools." I design content ecosystems that AI can understand, trust, and surface. I structure enterprise knowledge for LLM consumption, lead AI optimization testing programs, and use machine learning for content clustering and deduplication. I've been an early adopter of AI in enterprise content workflows since 2022.</p>
-                <p><em>I prepare organizations for how people will find information tomorrow.</em></p>
-            </div>
-
-            <div class="difference professional-only">
-                <p class="difference-label"><strong>🧩 How I'm Different</strong></p>
-                <p>Many professionals manage content. I build the systems that make content work at scale.</p>
-                <p>I'm known for:</p>
-                <ul class="difference-list">
-                    <li>⭐ Expanding beyond role definitions and owning neglected initiatives</li>
-                    <li>⭐ Combining strategy with hands-on execution</li>
-                    <li>⭐ Building programs from zero budget to global scale</li>
-                    <li>⭐ Translating complexity into structured systems</li>
-                    <li>⭐ Connecting content performance to financial impact</li>
-                </ul>
-            </div>
-
-            <div class="global-perspective professional-only">
-                <p class="perspective-label"><strong>🌍 Global Perspective</strong></p>
-                <p>I've worked across multinational environments, government institutions, and global tech enterprises — leading initiatives across regions, languages, and cultures. From the European Parliament to enterprise AI ecosystems, I bring operational discipline, strategic thinking, and calm leadership in complex environments.</p>
-            </div>
-
-            <div class="hiring-note professional-only">
-                <p class="hiring-label"><strong>🎯 If You're Hiring For:</strong></p>
-                <ul class="hiring-list">
-                    <li>Content Strategy Leadership</li>
-                    <li>Knowledge Management Transformation</li>
-                    <li>AI-Ready Content Operations</li>
-                    <li>Self-Service & Deflection Strategy</li>
-                    <li>Program Management in Service Operations</li>
-                </ul>
-                <p><em>We should talk.</em></p>
             </div>
         </div>
     </section>
