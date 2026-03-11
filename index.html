@@ -245,6 +245,81 @@
             box-shadow: 0 8px 16px rgba(0, 240, 255, 0.1);
             transform: translateY(-2px);
         }
+        /* --- QUICK NAVIGATION --- */
+        .quick-nav {
+            padding: 3rem 5%;
+            background: rgba(255, 255, 255, 0.01);
+            border-bottom: 1px solid var(--border-color);
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .nav-label {
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+        .nav-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+        }
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 1.5rem 1rem;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 6px;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.15s ease;
+            cursor: pointer;
+        }
+        .nav-item:hover {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(255, 255, 255, 0.12);
+            transform: translateY(-2px);
+        }
+        .nav-icon {
+            font-size: 2rem;
+            margin-bottom: 0.6rem;
+        }
+        .nav-title {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.3rem;
+        }
+        .nav-desc {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            line-height: 1.3;
+        }
+        @media (max-width: 768px) {
+            .nav-grid {
+                grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            }
+            .nav-item {
+                padding: 1rem 0.75rem;
+            }
+            .nav-icon {
+                font-size: 1.5rem;
+                margin-bottom: 0.4rem;
+            }
+            .nav-title {
+                font-size: 0.85rem;
+            }
+            .nav-desc {
+                font-size: 0.7rem;
+            }
+        }
         /* --- EXECUTIVE DASHBOARD --- */
         .executive-dashboard {
             padding: 4.5rem 5%;
@@ -1135,6 +1210,62 @@
         <div class="hero-ctas">
             <a href="#impact" class="btn btn-primary">View Career Journey</a>
             <a href="https://linkedin.com/in/marcela-gleixner-programmanager" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Connect Professionally</a>
+        </div>
+    </section>
+
+    <!-- QUICK NAVIGATION -->
+    <section class="quick-nav">
+        <div class="nav-container">
+            <div class="nav-label professional-only">Everything on This Page</div>
+            <div class="nav-label nerdy-only">Available Realms to Explore</div>
+            <div class="nav-grid">
+                <a href="#about" class="nav-item">
+                    <div class="nav-icon">👤</div>
+                    <div class="nav-title">About Me</div>
+                    <div class="nav-desc professional-only">Strategic focus & background</div>
+                    <div class="nav-desc nerdy-only">Your realm guide</div>
+                </a>
+                <a href="#impact" class="nav-item">
+                    <div class="nav-icon">📊</div>
+                    <div class="nav-title professional-only">Outcomes</div>
+                    <div class="nav-title nerdy-only">Achievements</div>
+                    <div class="nav-desc professional-only">Real transformation results</div>
+                    <div class="nav-desc nerdy-only">Legendary stats</div>
+                </a>
+                <a href="#experience" class="nav-item">
+                    <div class="nav-icon">💼</div>
+                    <div class="nav-title professional-only">Experience</div>
+                    <div class="nav-title nerdy-only">Quest History</div>
+                    <div class="nav-desc professional-only">15+ years across 5 orgs</div>
+                    <div class="nav-desc nerdy-only">Epic campaigns</div>
+                </a>
+                <a href="#testimonials" class="nav-item">
+                    <div class="nav-icon">💬</div>
+                    <div class="nav-title">Testimonials</div>
+                    <div class="nav-desc professional-only">What leaders say</div>
+                    <div class="nav-desc nerdy-only">Scrolls of praise</div>
+                </a>
+                <a href="#education" class="nav-item">
+                    <div class="nav-icon">🎓</div>
+                    <div class="nav-title">Education</div>
+                    <div class="nav-desc professional-only">Master's + 7 credentials</div>
+                    <div class="nav-desc nerdy-only">Official seals of mastery</div>
+                </a>
+                <a href="#skills" class="nav-item">
+                    <div class="nav-icon">🎯</div>
+                    <div class="nav-title professional-only">Skills</div>
+                    <div class="nav-title nerdy-only">Abilities</div>
+                    <div class="nav-desc professional-only">Core competencies</div>
+                    <div class="nav-desc nerdy-only">Skill tree</div>
+                </a>
+                <a href="#hobbies" class="nav-item">
+                    <div class="nav-icon">✦</div>
+                    <div class="nav-title professional-only">Interests</div>
+                    <div class="nav-title nerdy-only">Side Quests</div>
+                    <div class="nav-desc professional-only">Beyond work</div>
+                    <div class="nav-desc nerdy-only">Leisure pursuits</div>
+                </a>
+            </div>
         </div>
     </section>
 
