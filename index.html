@@ -172,6 +172,72 @@
             max-width: 800px;
             font-weight: 600;
         }
+        .hero-value-prop {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            margin-bottom: 3.5rem;
+            max-width: 900px;
+            font-weight: 500;
+        }
+        .hero-impact-dashboard {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2.5rem;
+            max-width: 1100px;
+        }
+        .impact-metric {
+            background: linear-gradient(135deg, rgba(255, 0, 160, 0.05), rgba(0, 240, 255, 0.05));
+            border: 1px solid rgba(255, 0, 160, 0.15);
+            border-radius: 16px;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .impact-metric::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-magenta), var(--accent-cyan));
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        .impact-metric:hover {
+            border-color: var(--accent-magenta);
+            background: linear-gradient(135deg, rgba(255, 0, 160, 0.1), rgba(0, 240, 255, 0.08));
+            box-shadow: 0 15px 40px rgba(255, 0, 160, 0.1);
+            transform: translateY(-4px);
+        }
+        .impact-metric:hover::before {
+            transform: scaleX(1);
+        }
+        .impact-number {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--accent-cyan);
+            margin-bottom: 0.75rem;
+            display: block;
+        }
+        .impact-label {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .impact-desc {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
         .hero-highlights {
             list-style: none;
             margin: 1rem 0 1.5rem;
@@ -291,8 +357,9 @@
         }
         /* --- QUICK NAVIGATION --- */
         .quick-nav {
-            padding: 2.5rem 5%;
-            background: rgba(255, 255, 255, 0.01);
+            padding: 3.5rem 5%;
+            background: linear-gradient(180deg, rgba(255, 0, 160, 0.02) 0%, rgba(0, 240, 255, 0.02) 100%);
+            border-top: 2px solid rgba(255, 0, 160, 0.1);
             border-bottom: 1px solid var(--border-color);
         }
         .nav-container {
@@ -317,23 +384,40 @@
             flex-direction: column;
             align-items: center;
             text-align: center;
-            padding: 1.5rem 1rem;
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 6px;
+            padding: 2rem 1.5rem;
+            background: linear-gradient(135deg, rgba(255, 0, 160, 0.04), rgba(0, 240, 255, 0.03));
+            border: 1px solid rgba(255, 0, 160, 0.1);
+            border-radius: 12px;
             text-decoration: none;
             color: inherit;
-            transition: all 0.15s ease;
+            transition: all 0.25s ease;
             cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        .nav-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--accent-magenta), var(--accent-cyan));
+            transform: scaleX(0);
+            transition: transform 0.25s ease;
         }
         .nav-item:hover {
-            background: rgba(255, 255, 255, 0.06);
-            border-color: rgba(255, 255, 255, 0.12);
-            transform: translateY(-2px);
+            background: linear-gradient(135deg, rgba(255, 0, 160, 0.12), rgba(0, 240, 255, 0.1));
+            border-color: var(--accent-magenta);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(255, 0, 160, 0.15);
+        }
+        .nav-item:hover::before {
+            transform: scaleX(1);
         }
         .nav-icon {
-            font-size: 2rem;
-            margin-bottom: 0.6rem;
+            font-size: 2.2rem;
+            margin-bottom: 0.8rem;
         }
         .nav-title {
             font-size: 0.95rem;
@@ -1150,6 +1234,25 @@
                 font-size: 2.5rem;
             }
 
+            .hero-value-prop {
+                font-size: 1rem;
+                margin-bottom: 2.5rem;
+            }
+
+            .hero-impact-dashboard {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+                margin-bottom: 2rem;
+            }
+
+            .impact-metric {
+                padding: 1.5rem 1.2rem;
+            }
+
+            .impact-number {
+                font-size: 2rem;
+            }
+
             .hero-tagline {
                 font-size: 1rem;
             }
@@ -1184,13 +1287,21 @@
                 padding: 3rem 4%;
             }
             .quick-nav {
-                padding: 2rem 4%;
+                padding: 3rem 4%;
             }
             .problems-grid {
                 grid-template-columns: 1fr 1fr;
             }
             .hero h1 {
                 font-size: 3rem;
+            }
+            .hero-value-prop {
+                font-size: 1.05rem;
+                margin-bottom: 2.5rem;
+            }
+            .hero-impact-dashboard {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.75rem;
             }
             .section-header h2 {
                 font-size: 2rem;
@@ -1270,6 +1381,39 @@
         <div class="hero-badge nerdy-only">✦ Seeking New Epic Quests</div>
 
         <h1>Marcela Gleixner</h1>
+
+        <p class="hero-value-prop professional-only">
+            I step into complex environments where knowledge is fragmented, AI readiness is unclear, and self-service isn't reducing operational cost. I establish governance, align stakeholders, and build scalable knowledge systems that empower customers and protect revenue.
+        </p>
+        <p class="hero-value-prop nerdy-only">
+            I enter chaotic digital realms where wisdom is scattered, magical systems unprepared, and quests fail to deflect crisis. I architect governance frameworks, unite fractured armies, and forge knowledge systems that arm citizens and fortify kingdoms.
+        </p>
+
+        <!-- Impact Dashboard -->
+        <div class="hero-impact-dashboard">
+            <div class="impact-metric">
+                <div class="impact-number">100M+</div>
+                <div class="impact-label professional-only">Users Reached</div>
+                <div class="impact-label nerdy-only">Citizens Served</div>
+                <div class="impact-desc">Enterprise platforms at scale</div>
+            </div>
+            <div class="impact-metric">
+                <div class="impact-number">67%→94%</div>
+                <div class="impact-label">AI Readiness</div>
+                <div class="impact-desc">Content prepared for LLMs</div>
+            </div>
+            <div class="impact-metric">
+                <div class="impact-number">80%</div>
+                <div class="impact-label">Time Savings</div>
+                <div class="impact-desc">Onboarding optimization</div>
+            </div>
+            <div class="impact-metric">
+                <div class="impact-number">15+</div>
+                <div class="impact-label professional-only">Years Experience</div>
+                <div class="impact-label nerdy-only">Campaign Seasons</div>
+                <div class="impact-desc">5 major organizations</div>
+            </div>
+        </div>
     </section>
 
     <!-- QUICK NAVIGATION -->
