@@ -21,9 +21,9 @@ export function Button({
           'px-6 py-3 text-base': size === 'md',
           'px-4 py-2 text-sm': size === 'sm',
           'px-8 py-4 text-lg': size === 'lg',
-          'bg-neon-magenta hover:bg-neon-magenta/90 text-black hover:shadow-lg hover:shadow-neon-magenta/50': variant === 'primary',
-          'border border-neon-cyan text-neon-cyan hover:bg-neon-cyan/10': variant === 'secondary',
-          'text-gray-300 hover:text-white hover:bg-white/10': variant === 'ghost',
+          'bg-gradient-to-r from-accent-blue to-blue-600 hover:from-accent-blue hover:to-blue-700 text-white hover:shadow-lg hover:shadow-blue-500/30': variant === 'primary',
+          'border-2 border-gray-200 text-gray-700 hover:border-accent-blue hover:text-accent-blue hover:bg-blue-50': variant === 'secondary',
+          'text-gray-600 hover:text-accent-blue hover:bg-blue-50': variant === 'ghost',
         },
         className
       )}
