@@ -24,14 +24,19 @@ export function Hero() {
       </p>
 
       <div className="flex flex-col sm:flex-row gap-4 pt-8">
-        <a href={contactInfo.linkedin} target="_blank" rel="noopener noreferrer">
+        <a href="#executive-brief">
           <Button variant="primary" size="lg">
-            Connect on LinkedIn ↗
+            Open Executive Brief
           </Button>
         </a>
         <a href="#experience">
           <Button variant="secondary" size="lg">
             See My Work
+          </Button>
+        </a>
+        <a href={contactInfo.linkedin} target="_blank" rel="noopener noreferrer">
+          <Button variant="ghost" size="lg">
+            Connect on LinkedIn ↗
           </Button>
         </a>
       </div>
