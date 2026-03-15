@@ -1,4 +1,39 @@
 import { Globe, Briefcase, Building2, Users } from 'lucide-react';
+import { useState } from 'react';
+
+type CompanyLogo = {
+  id: string;
+  name: string;
+  domain: string;
+};
+
+function LogoBadge({ company }: { company: CompanyLogo }) {
+  const [hasError, setHasError] = useState(false);
+
+  return (
+    <div className="flex items-center gap-3 rounded-lg border border-gray-200 bg-gray-50 px-3 py-2">
+      {!hasError ? (
+        <img
+          src={`https://logo.clearbit.com/${company.domain}`}
+          alt={`${company.name} logo`}
+          className="h-8 w-8 rounded-md bg-white object-contain p-1"
+          loading="lazy"
+          onError={() => setHasError(true)}
+        />
+      ) : (
+        <div className="h-8 w-8 rounded-md bg-gradient-blue text-white text-xs font-bold flex items-center justify-center">
+          {company.name
+            .split(' ')
+            .map((word) => word[0])
+            .join('')
+            .slice(0, 2)
+            .toUpperCase()}
+        </div>
+      )}
+      <span className="text-sm font-medium text-gray-700">{company.name}</span>
+    </div>
+  );
+}
 
 export function WorkExperience() {
   const workTypes = [
@@ -40,6 +75,14 @@ export function WorkExperience() {
     }
   ];
 
+  const companies: CompanyLogo[] = [
+    { id: 'microsoft', name: 'Microsoft', domain: 'microsoft.com' },
+    { id: 'electronic-arts', name: 'Electronic Arts', domain: 'ea.com' },
+    { id: 'vmware', name: 'VMware', domain: 'vmware.com' },
+    { id: 'blizzard', name: 'Blizzard', domain: 'blizzard.com' },
+    { id: 'eu-parliament', name: 'EU Parliament', domain: 'europarl.europa.eu' }
+  ];
+
   const getGradientClass = (gradient: string): string => {
     const map: Record<string, string> = {
       'gradient-cyan': 'bg-gradient-cyan',
@@ -60,6 +103,15 @@ export function WorkExperience() {
         <div>
           <h2 className="text-4xl font-space-grotesk font-bold text-gray-900">Work Experience</h2>
           <p className="text-gray-600">Diverse experience across industries and contexts</p>
+        </div>
+      </div>
+
+      <div className="mb-10">
+        <p className="text-sm font-semibold uppercase tracking-wide text-gray-500 mb-4">Organizations</p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3">
+          {companies.map((company) => (
+            <LogoBadge key={company.id} company={company} />
+          ))}
         </div>
       </div>
 
