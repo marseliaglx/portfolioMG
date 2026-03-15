@@ -4,7 +4,7 @@ import { Linkedin, Mail } from 'lucide-react';
 
 export function Footer() {
   return (
-    <footer className="relative z-10 border-t border-gray-200 bg-gray-50">
+    <footer id="contact" className="relative z-10 border-t border-gray-200 bg-gray-50 scroll-mt-28">
       <div className="max-w-7xl mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* Contact Info */}

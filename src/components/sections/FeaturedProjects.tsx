@@ -50,7 +50,7 @@ export function FeaturedProjects() {
   };
 
   return (
-    <section id="featured-projects" className="py-20 bg-white">
+    <section id="impact-ledger" className="py-20 bg-white">
       {/* Section Header with Icon Box */}
       <div className="flex items-center gap-4 mb-12">
         <div className="w-16 h-16 rounded-xl bg-gradient-cyan flex items-center justify-center flex-shrink-0">

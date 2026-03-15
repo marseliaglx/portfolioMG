@@ -12,7 +12,7 @@ export function Layout({ children }: LayoutProps) {
   return (
     <ThemeProvider>
       <ModalProvider>
-        <div className="relative min-h-screen bg-white">
+        <div id="top" className="relative min-h-screen bg-white">
           <Header />
           <main className="relative z-10 max-w-7xl mx-auto px-4 py-20">
             {children}
