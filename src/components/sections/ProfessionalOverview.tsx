@@ -29,7 +29,7 @@ export function ProfessionalOverview() {
   ];
 
   return (
-    <section id="professional-overview" className="py-20 bg-gradient-to-br from-accent-blue to-blue-700 text-white">
+    <section id="executive-brief" className="py-20 bg-gradient-to-br from-accent-blue to-blue-700 text-white">
       <div className="max-w-7xl mx-auto px-4">
         {/* Header */}
         <div className="flex items-start gap-4 mb-12">
