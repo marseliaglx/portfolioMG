@@ -1,6 +1,7 @@
 import { Layout } from './components/layout/Layout';
 import { Hero } from './components/sections/Hero';
 import { ProfessionalOverview } from './components/sections/ProfessionalOverview';
+import { ExecutiveBrief } from './components/sections/ExecutiveBrief';
 import { Education } from './components/sections/Education';
 import { Certifications } from './components/sections/Certifications';
 import { FeaturedProjects } from './components/sections/FeaturedProjects';
@@ -15,6 +16,7 @@ function App() {
   return (
     <Layout>
       <Hero />
+      <ExecutiveBrief />
       <ProfessionalOverview />
       <Education />
       <Certifications />
